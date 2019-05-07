@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CheckGround : MonoBehaviour
 {
-    public Mummy player;
+    public PlayerController player;
     // Start is called before the first frame update
     void Start()
     {
-        player = gameObject.GetComponent<Mummy>();
+        player = gameObject.GetComponent<PlayerController>();
     }
 
     void OnTriggerEntered2D(Collider2D col)
