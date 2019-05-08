@@ -26,18 +26,6 @@ public class PlayerController : Character
     private void GetInput()
     {
         direction = Vector2.zero;
-        // Arriba
-        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-        {
-            direction += Vector2.up;
-        }
-
-        // Abajo
-        if(Input.GetKey(KeyCode.S)  || Input.GetKey(KeyCode.DownArrow))
-        {
-            direction += Vector2.down;
-        }
-
         // Izquierda
         if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
@@ -49,6 +37,19 @@ public class PlayerController : Character
         {
             direction += Vector2.right;
         }
+        /*
+        // Arriba
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        {
+            direction += Vector2.up;
+        }
+
+        // Abajo
+        if(Input.GetKey(KeyCode.S)  || Input.GetKey(KeyCode.DownArrow))
+        {
+            direction += Vector2.down;
+        }
+         */
     }
 
 

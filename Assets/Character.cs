@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
-    [SerializeField] private float speed = 500f;
+    [SerializeField] private float speed = 175f;
     protected Vector2 direction;
 
     protected Animator animator;
@@ -29,10 +29,10 @@ public abstract class Character : MonoBehaviour
 
     public void AnimCharacter(Vector2 direction)
     {
-        float xValue = (direction.y != 0) ? 0 : direction.x;
+        float xValue = direction.x;
         animator.SetFloat("x", xValue);
-        animator.SetFloat("y", direction.y);
+        //animator.SetFloat("y", direction.y);
 
-        animator.SetBool("stop", direction == Vector2.zero);
+        animator.SetBool("isMoving", direction != Vector2.zero);
     }
 }
