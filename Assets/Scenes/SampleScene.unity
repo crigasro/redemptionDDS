@@ -123,9 +123,10 @@ GameObject:
   - component: {fileID: 105621754}
   - component: {fileID: 105621753}
   - component: {fileID: 105621755}
+  - component: {fileID: 105621757}
   - component: {fileID: 105621756}
   - component: {fileID: 105621758}
-  - component: {fileID: 105621757}
+  - component: {fileID: 105621759}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -189,8 +190,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105621752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.6, y: -1.47, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.2, y: 2.42, z: 0}
+  m_LocalScale: {x: 1.03, y: 0.991, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -214,8 +215,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &105621756
-BoxCollider2D:
+--- !u!70 &105621756
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -227,19 +228,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.64762306, y: 0.05570984}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.57, y: 2.93}
-    newSize: {x: 3.57, y: 2.93}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.4948215, y: 2.7071624}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.6731906, y: 0.047123432}
+  m_Size: {x: 1.3888617, y: 2.6948524}
+  m_Direction: 0
 --- !u!50 &105621757
 Rigidbody2D:
   serializedVersion: 4
@@ -255,12 +246,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &105621758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,6 +265,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
+  jumpVelocity: 5
+  grounded: 0
+--- !u!114 &105621759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105621752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a50af8a943c7b8d498af59eae210ab7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 175
+  jumpVelocity: 5
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
 --- !u!1 &263880157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1621,8 +1630,8 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!68 &959824192
-EdgeCollider2D:
+--- !u!19719996 &959824192
+TilemapCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1635,16 +1644,6 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -10.88231, y: -1.0146792}
-  - {x: 0.89548826, y: -1.069069}
-  - {x: 1.9247024, y: -0.024913788}
-  - {x: 3.3531148, y: -0.017911911}
-  - {x: 3.540791, y: -0.053451747}
-  - {x: 5.035802, y: -0.047151446}
-  - {x: 6.0782375, y: -1.0457673}
-  - {x: 10.881985, y: -0.9973098}
 --- !u!1 &1136259034
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,9 @@ public abstract class Character : MonoBehaviour
     protected Vector2 direction;
 
     protected Animator animator;
-    protected Rigidbody2D rigidBody;
+    protected Rigidbody2D rb;
+    [Range(1, 10)]
+    public float jumpVelocity;
 
     void Start()
     {
@@ -18,12 +20,21 @@ public abstract class Character : MonoBehaviour
     protected virtual void FixedUpdate()
     {
         Move();
+        Jump();
+    }
+
+    protected void Jump()
+    {
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        {
+            rb.velocity = Vector2.up * jumpVelocity;
+        }
     }
 
     protected void Move()
     {
         //transform.Translate(direction * speed * Time.deltaTime);
-        rigidBody.velocity = direction * speed * Time.deltaTime;
+        rb.velocity = direction * speed * Time.deltaTime;
         AnimCharacter(direction);
     }
 
