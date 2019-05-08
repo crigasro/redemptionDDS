@@ -9,7 +9,7 @@ public abstract class Character : MonoBehaviour
 
     protected Animator animator;
     protected Rigidbody2D rb;
-    [Range(1, 10)]
+    [Range(1, 100)]
     public float jumpVelocity;
 
     void Start()
