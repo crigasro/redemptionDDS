@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerController : Character
 {
-    public bool grounded;
-
     void Start()
     {
         grounded = true;
@@ -16,36 +14,16 @@ public class PlayerController : Character
     void Update()
     {
         direction = Vector2.zero;
-
+        cunrrentPlayer = true;
         GetInputRight();
         GetInputLeft();
-        //GetInputUp();
+        Jump();
     }
 
 
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
-    }
-
-
-    private void GetInputRight()
-    {
-        //direction = Vector2.zero;
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            direction += Vector2.right;
-        }
-        
-    }
-
-    private void GetInputLeft()
-    {
-        //direction = Vector2.zero;
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        {
-            direction += Vector2.left;
-        }
     }
 
 }

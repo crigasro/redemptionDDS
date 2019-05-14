@@ -7,6 +7,8 @@ public abstract class Character : MonoBehaviour
     [SerializeField] private float speed = 175f;
     protected Vector2 direction;
 
+    protected bool cunrrentPlayer;
+    public bool grounded;
     protected Animator animator;
     protected Rigidbody2D rb;
     [Range(1, 100)]
@@ -14,21 +16,13 @@ public abstract class Character : MonoBehaviour
 
     void Start()
     {
+
     }
 
     //FixedUpdate porque es mejor para movimientos
     protected virtual void FixedUpdate()
     {
         Move();
-        Jump();
-    }
-
-    protected void Jump()
-    {
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-        {
-            rb.velocity = Vector2.up * jumpVelocity;
-        }
     }
 
     protected void Move()
@@ -45,5 +39,36 @@ public abstract class Character : MonoBehaviour
         //animator.SetFloat("y", direction.y);
 
         animator.SetBool("isMoving", direction != Vector2.zero);
+    }
+
+    protected void GetInputRight()
+    {
+        //direction = Vector2.zero;
+        bool keyPressed = (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow));
+
+        if (keyPressed && cunrrentPlayer)
+        {
+            direction += Vector2.right;
+        }
+        
+    }
+
+    protected void GetInputLeft()
+    {
+        //direction = Vector2.zero;
+        bool keyPressed = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow);
+        if (keyPressed && cunrrentPlayer)
+        {
+            direction += Vector2.left;
+        }
+    }
+
+    protected void Jump()
+    {
+        bool condition = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) && grounded;
+        if (condition && cunrrentPlayer)
+        {
+            direction += Vector2.up;
+        }
     }
 }
