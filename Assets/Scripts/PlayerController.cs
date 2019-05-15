@@ -6,7 +6,7 @@ public class PlayerController : Character
 {
     void Start()
     {
-        grounded = true;
+        isActive = true; // DE MOMENTO
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -14,15 +14,16 @@ public class PlayerController : Character
     void Update()
     {
         direction = Vector2.zero;
-        cunrrentPlayer = true;
+
         GetInputRight();
         GetInputLeft();
-        Jump();
+        GetInputJump();
     }
 
 
     protected override void FixedUpdate()
     {
+        Debug.Log("fixedUpdate pc");
         base.FixedUpdate();
     }
 
