@@ -7,10 +7,12 @@ public abstract class Character : MonoBehaviour
     [SerializeField] private float speed = 175f;
     protected Vector2 direction;
 
-    protected bool cunrrentPlayer;
     public bool grounded;
     protected Animator animator;
     protected Rigidbody2D rb;
+
+    public bool isActive { get; set; }
+
     [Range(1, 100)]
     public float jumpVelocity;
 
@@ -22,13 +24,13 @@ public abstract class Character : MonoBehaviour
     //FixedUpdate porque es mejor para movimientos
     protected virtual void FixedUpdate()
     {
-        Move();
+        if (isActive)
+            Move();
     }
 
     protected void Move()
     {
-        //transform.Translate(direction * speed * Time.deltaTime);
-        rb.velocity = direction * speed * Time.deltaTime;
+        rb.velocity = direction * speed * Time.fixedDeltaTime;
         AnimCharacter(direction);
     }
 
@@ -36,17 +38,15 @@ public abstract class Character : MonoBehaviour
     {
         float xValue = direction.x;
         animator.SetFloat("x", xValue);
-        //animator.SetFloat("y", direction.y);
 
         animator.SetBool("isMoving", direction != Vector2.zero);
     }
 
     protected void GetInputRight()
     {
-        //direction = Vector2.zero;
         bool keyPressed = (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow));
 
-        if (keyPressed && cunrrentPlayer)
+        if (keyPressed)
         {
             direction += Vector2.right;
         }
@@ -55,20 +55,25 @@ public abstract class Character : MonoBehaviour
 
     protected void GetInputLeft()
     {
-        //direction = Vector2.zero;
         bool keyPressed = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow);
-        if (keyPressed && cunrrentPlayer)
+        if (keyPressed)
         {
             direction += Vector2.left;
         }
     }
 
-    protected void Jump()
+    protected void GetInputJump()
     {
         bool condition = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) && grounded;
-        if (condition && cunrrentPlayer)
+        if (condition)
         {
             direction += Vector2.up;
         }
+    }
+
+    protected void Jump()
+    {
+//        if (grounded && isActive)
+
     }
 }
