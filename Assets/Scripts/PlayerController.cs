@@ -56,8 +56,8 @@ public class PlayerController : MonoBehaviour
 
         this.rb.velocity = Vector3.Lerp(velocity, targetVelocity, movementSmoothing);
         velocity = this.rb.velocity; 
-        Debug.Log("Direction: " + this.direction);
-        Debug.Log("Grounded: " + this.grounded);
+       // Debug.Log("Direction: " + this.direction);
+        // Debug.Log("Grounded: " + this.grounded);
 
         if (this.direction.y > 0 && this.grounded)
         {
@@ -88,6 +88,7 @@ public class PlayerController : MonoBehaviour
         Collider2D[] nearColliders = Physics2D.OverlapCircleAll(this.groundCheck.position, 0.2f, this.groundLayerMask);
 
         foreach(Collider2D collider in nearColliders) {
+        
             if (collider.gameObject != gameObject)
             {
                 grounded = true;
