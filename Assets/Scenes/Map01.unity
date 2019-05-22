@@ -263,9 +263,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5840190307ab0874da8537a3d5af1a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1000
-  grounded: 0
-  jumpVelocity: 50
+  maxSpeed: 300
+  jumpForce: 300
+  movementSmoothing: 0.1
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &263880157
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,7 +360,6 @@ GameObject:
   - component: {fileID: 384247050}
   - component: {fileID: 384247049}
   - component: {fileID: 384247048}
-  - component: {fileID: 384247052}
   - component: {fileID: 384247047}
   m_Layer: 0
   m_Name: Indian
@@ -494,21 +496,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &384247052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 384247046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 957ac12a882879b4fbbd66a9482efcf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 175
-  grounded: 0
-  jumpVelocity: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
