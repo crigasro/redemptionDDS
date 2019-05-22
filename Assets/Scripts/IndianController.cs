@@ -7,7 +7,7 @@ public class IndianController : Character
     // Start is called before the first frame update
     void Start()
     {
-        cunrrentPlayer = false;
+        //cunrrentPlayer = false;
         grounded = true;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
