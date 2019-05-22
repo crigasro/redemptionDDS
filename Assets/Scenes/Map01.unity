@@ -269,7 +269,7 @@ MonoBehaviour:
   movementSmoothing: 0.1
   groundLayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
 --- !u!1 &263880157
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +361,6 @@ GameObject:
   - component: {fileID: 384247050}
   - component: {fileID: 384247049}
   - component: {fileID: 384247048}
-  - component: {fileID: 384247052}
   - component: {fileID: 384247047}
   m_Layer: 0
   m_Name: Indian
