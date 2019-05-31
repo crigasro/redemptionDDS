@@ -7,18 +7,15 @@ public class State : MonoBehaviour
     // Para saber si una puerta está abierta o no 
     // (= puedes pasar o no, aunque puedas caminar por ella)
     // Habrá que hacer uno para cada cosa que queramos mirar su estado
-    protected enum DoorST { Open, Closed }
-    protected enum ChestST { Open, Closed }
-
-
+    protected enum EntityST { Open, Closed }
 
     public virtual void UpdateState() {}
 
     // Habrá un método para cada cosa, 
     // por ejemplo para el comportamiento de los objetos de los cofres o para enemigos
-    protected void DoorAction (DoorST door, int actualLevel) {
+    protected void DoorAction (EntityST door, int actualLevel) {
         switch(door) {
-            case DoorST.Open:
+            case EntityST.Open:
                 // Animacion de puerta abierta (activar el parametro trigueador)
 
                 // Al LoadDoorScenario le pasamos actualLevel, 
@@ -29,20 +26,20 @@ public class State : MonoBehaviour
                 GameManager.instance.LoadDoorScenario(nextLevel);
                 break;
 
-            case DoorST.Closed:
+            case EntityST.Closed:
                 // Nada
                 break;
         }
     }
 
-    protected void ChestAction (ChestST chest) {
+    protected void ChestAction (EntityST chest) {
         switch(chest) {
-            case ChestST.Open:
+            case EntityST.Open:
                 // Poner la animación del cofre abierto (poner ese trigger a true)
                 // Llamar al método para que el cofre te de algo
                 break;
 
-            case ChestST.Closed:
+            case EntityST.Closed:
                 // Trigger de cofre cerrado para la animación (aunque seguramente esto no se use)
                 break;
         }
