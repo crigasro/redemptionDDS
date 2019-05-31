@@ -19,7 +19,11 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void LoadScenario(string name) {
+    public void LoadScenario() {
+
+    }
+
+    public void LoadDoorScenario(int actualLevel) {
 
     }
 }

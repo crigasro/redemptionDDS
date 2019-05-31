@@ -16,14 +16,21 @@ public class State : MonoBehaviour
 
     // Habrá un método para cada cosa, 
     // por ejemplo para el comportamiento de los objetos de los cofres o para enemigos
-    protected void DoorAction (DoorST door, string level) {
+    protected void DoorAction (DoorST door, int actualLevel) {
         switch(door) {
             case DoorST.Open:
-                // Cargar el esenario con ese nombre (el string level = dirección donde está el escenario)
+                // Animacion de puerta abierta (activar el parametro trigueador)
+
+                // Al LoadDoorScenario le pasamos actualLevel, 
+                // para que cargue el esenario que sigue al escenario donde está la puerta
+                // actualLevel = el escenario donde está la puerta
+
+                int nextLevel = actualLevel + 1;    // Cuidado con el orden en el que se ponen las escenas
+                GameManager.instance.LoadDoorScenario(nextLevel);
                 break;
 
             case DoorST.Closed:
-
+                // Nada
                 break;
         }
     }
