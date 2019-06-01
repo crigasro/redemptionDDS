@@ -41,7 +41,7 @@ public class Chest : MonoBehaviour
     private void OpenChest() {
         if(Input.GetKeyDown(KeyCode.E)) {
             animChest.SetBool("chestIsOpen", true);
-            GameManager.instance.GiveRandomObjectFromChest();
+            //GameManager.instance.GiveRandomObjectFromChest();
         }
     }
 }

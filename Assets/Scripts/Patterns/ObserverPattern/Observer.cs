@@ -4,8 +4,5 @@ using UnityEngine;
 
 public abstract class Observer : MonoBehaviour
 {
-    public enum NotificationType{
-        AchivementUnlocked
-    }
-    public abstract void OnNotify(Object obj, Event ev);
+    public abstract void OnNotify(GameObject go, NotifType nt, bool extraInfo);
 }

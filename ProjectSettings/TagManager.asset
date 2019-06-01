@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - MenuButton
+  - lever1
+  - lever2
+  - lever3
   layers:
   - Default
   - TransparentFX
