@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AchivementSystem : Observer
 {
-    public override void OnNotify(Object obj, Event ev)
+    public override void OnNotify(GameObject go, NotifType nt, bool extraInfo)
     {   
         /*
         switch(ev)
@@ -19,4 +19,8 @@ public class AchivementSystem : Observer
     {
 
     }
+}
+
+public enum NotifType {
+    AchivementUnlocked, ActivatedDoor, GeneralMessage
 }

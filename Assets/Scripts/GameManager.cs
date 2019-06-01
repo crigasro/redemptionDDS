@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance = null;
+    public static GameManager instance;
     public PlayerState playerstate;
+    private int goingState;
     public Transform firePoint;
     public GameObject fireball;
     public GameObject iceball;
@@ -19,13 +20,23 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        
+        goingState = 1; //de momento
     }
 
 
     void Update()
     {
         
+    }
+
+    public int getGoingState() 
+    {
+        return goingState;
+    }
+
+    public void setGoingState(int gS)
+    {
+        this.goingState = gS;
     }
 
     public PlayerState getPlayerState() 
@@ -39,12 +50,14 @@ public class GameManager : MonoBehaviour
     }
 
     public void LoadDoorScenario(int actualLevel) {
-        SceneManager.LoadScene(actualLevel + 1);
+        int indextoload = actualLevel + 1;
+        SceneManager.LoadScene(indextoload);
     }
 
     public void GiveRandomObjectFromChest()
     {
         //getPlayerState().changeState(getPlayerState().getSlowerState());
+        goingState = 1; //gravedad invertida --desde player state se pone a 0 (no bad efect) (?)
     }
     
     public void giveFire() {

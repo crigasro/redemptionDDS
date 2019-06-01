@@ -8,9 +8,13 @@ public abstract class Subject : MonoBehaviour
   // y para que notifiquen los cambios.
   private List<Observer> _observers = new List<Observer>();
 
+  protected static string CompletedPuzzle = "COMPLETED_PUZZLE";
+
+
   public void AttachObserver(Observer observer)
   {
-    _observers.Add(observer);
+    if(_observers.Contains(observer) == false)
+      _observers.Add(observer);
   }
 
   public void DetachObserver(Observer observer)
@@ -18,8 +22,9 @@ public abstract class Subject : MonoBehaviour
     _observers.Remove(observer);
   }
 
-  public void NotifyObserver(Object obj, Event ev)
+  public void NotifyObserver(NotifType nt, bool extraInfo)
   {
-    foreach (Observer o in _observers) { o.OnNotify(obj, ev); }
+    // No creo que esta sea la mejor forma de hacer ( me refiero a los parametros que le paso )
+    foreach (Observer o in _observers) { o.OnNotify(gameObject, nt, extraInfo); }
   }
 }
