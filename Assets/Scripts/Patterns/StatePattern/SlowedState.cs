@@ -6,6 +6,6 @@ public class SlowedState : DebuffState
 {
     public override void debuffEffect(Rigidbody2D rigidbody)
     {
-        
+        //hola
     }
 }
