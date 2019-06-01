@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public GameObject playerObj;
+    public PlayerState playerstate;
+
 
     
     void Start()
@@ -20,6 +21,12 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public PlayerState getPlayerState() 
+    {
+        // Asociar PlayerState al Jugador y después arrastrar el jugador a playerstate de aqui
+        return playerstate;
+    }
+
     public void LoadScenario(int buildSettingsIndex) {
         SceneManager.LoadScene(buildSettingsIndex);
     }
@@ -30,6 +37,6 @@ public class GameManager : MonoBehaviour
 
     public void GiveRandomObjectFromChest()
     {
-        //getPlayerStats().changeState(getPlayerStats().getSlowedState());
+        //getPlayerState().changeState(getPlayerState().getSlowerState());
     }
 }
