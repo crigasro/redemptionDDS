@@ -2,20 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Potion : BasePotion
+public class Potion : MonoBehaviour, IBasePotion
 {
-    public override void Use() {
-        Debug.Log("Potion consumed");
+    public void Use() {
+        Debug.Log("Use() of Potion");
         Destroy(gameObject);
     }
 
     protected void Start () {
         Debug.Log("Potion initialized");
-    }
-
-    protected void Update() {
-        if (Input.GetKey(KeyCode.E)) {
-            Use();
-        }
     }
 }

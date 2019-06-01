@@ -5,9 +5,14 @@ using UnityEngine;
 public class FirePotionScript : MonoBehaviour
 {
     public float speed;
+    public PlayerController player;
     void Start()
     {
+        player = FindObjectOfType<PlayerController>();
         
+        if (player.transform.localScale.x <  0) {
+            speed = -speed;
+        }
     }
 
     void Update()
@@ -18,5 +23,6 @@ public class FirePotionScript : MonoBehaviour
     void OnTriggerEnter2D (Collider2D collider) {
         Debug.Log("Collision by fireball");
         Destroy(gameObject);
+        Destroy(collider.gameObject);
     }
 }
