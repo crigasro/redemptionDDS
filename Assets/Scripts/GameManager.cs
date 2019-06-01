@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance = null;
+    public static GameManager instance;
     public PlayerState playerstate;
     private int goingState;
     public Transform firePoint;
