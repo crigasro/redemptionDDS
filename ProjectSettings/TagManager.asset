@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - MenuButton
+  - Water
+  - Essential
   layers:
   - Default
   - TransparentFX
