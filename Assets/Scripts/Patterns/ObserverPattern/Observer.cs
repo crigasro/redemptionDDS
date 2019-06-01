@@ -7,5 +7,5 @@ public abstract class Observer : MonoBehaviour
     public enum NotificationType{
         AchivementUnlocked
     }
-    public abstract void OnNotify();
+    public abstract void OnNotify(Object obj, Event ev);
 }
