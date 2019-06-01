@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public Transform firePoint;
     public GameObject fireball;
 
+
     public bool firePower = false;
     void Start()
     {
