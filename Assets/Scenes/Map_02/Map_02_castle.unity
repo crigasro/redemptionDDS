@@ -229,7 +229,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.003770396, y: -0.0784055}
@@ -258,6 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animDoor: {fileID: 0}
+  leversObj: []
   levers: []
 --- !u!114 &217237540
 MonoBehaviour:
@@ -272,10 +273,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animDoor: {fileID: 217237537}
-  levers:
+  leversObj:
   - {fileID: 1065269662}
   - {fileID: 705523524}
   - {fileID: 1605252456}
+  levers:
+  - {fileID: 1065269665}
+  - {fileID: 705523526}
+  - {fileID: 1605252458}
 --- !u!1001 &317267797
 PrefabInstance:
   m_ObjectHideFlags: 0

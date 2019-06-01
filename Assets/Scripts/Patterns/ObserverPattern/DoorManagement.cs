@@ -11,14 +11,17 @@ public class DoorManagement : Observer
     public Animator animDoor;
     private bool openDoor = false;
 
-    public GameObject[] levers;
+    public GameObject[] leversObj;
+    public Lever[] levers;
     private bool[] correctCombination = new bool[] {false, true, true};
     private bool[] playerCombination = new bool[3];
 
     void Start()
     {
         animDoor = GetComponent<Animator>();
-        Lever.instance.AttachObserver(this);
+        foreach(var lev in levers){
+            lev.AttachObserver(this);
+        }
     }
 
     public override void OnNotify(GameObject go, NotifType nt, bool leverstatus)
@@ -36,15 +39,16 @@ public class DoorManagement : Observer
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player") && openDoor) 
+        if(other.CompareTag("Player") && openDoor) {
             GameManager.instance.LoadDoorScenario(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     public void ManageLeverNotification(GameObject go, bool leverstatus)
     {
         for(int i = 0; i < 3; i++)
         {
-            if(go == levers[i])
+            if(go == leversObj[i])
             {
                 playerCombination[i] = leverstatus;
             }

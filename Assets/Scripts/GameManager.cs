@@ -50,7 +50,8 @@ public class GameManager : MonoBehaviour
     }
 
     public void LoadDoorScenario(int actualLevel) {
-        SceneManager.LoadScene(actualLevel + 1);
+        int indextoload = actualLevel + 1;
+        SceneManager.LoadScene(indextoload);
     }
 
     public void GiveRandomObjectFromChest()
