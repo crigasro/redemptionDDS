@@ -6,9 +6,14 @@ TagManager:
   tags:
   - Ground
   - MenuButton
+<<<<<<< HEAD
   - lever1
   - lever2
   - lever3
+=======
+  - Water
+  - Essential
+>>>>>>> b57e0bbba3c025a6889d2db2dab9daac4bd013f5
   layers:
   - Default
   - TransparentFX
