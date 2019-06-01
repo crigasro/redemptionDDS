@@ -30,9 +30,13 @@ public class PlayerController : MonoBehaviour
         }
         //Disparación de bola de fuego
         if (Input.GetKeyDown(KeyCode.Space) && firePower) {
-            Debug.Log("Player position: " + transform.position + "\nFirepoint position: " + firePoint.position);
             Instantiate(fireball, firePoint.position, firePoint.rotation);
         }
+    }
+
+    public void giveFire() {
+        firePower = true;
+        Debug.Log("giveFire() -- firePower is: " + firePower);
     }
 
     void FixedUpdate() {

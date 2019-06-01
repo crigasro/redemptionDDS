@@ -339,7 +339,7 @@ PrefabInstance:
     - target: {fileID: 1306965953409661704, guid: 0d5f44c95a099d741855f4c66dbbf660,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.64
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 1306965953409661704, guid: 0d5f44c95a099d741855f4c66dbbf660,
         type: 3}
@@ -402,6 +402,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6334874799598376551, guid: 76a82f098fa650843b7533dbb32c34a0,
         type: 3}
+    - target: {fileID: 1306965953409661710, guid: 0d5f44c95a099d741855f4c66dbbf660,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.070366934
+      objectReference: {fileID: 0}
+    - target: {fileID: 1306965953409661710, guid: 0d5f44c95a099d741855f4c66dbbf660,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.0736737
+      objectReference: {fileID: 0}
+    - target: {fileID: 1306965953409661710, guid: 0d5f44c95a099d741855f4c66dbbf660,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.6911254
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d5f44c95a099d741855f4c66dbbf660, type: 3}
 --- !u!1 &161086688
@@ -659,6 +674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 473394280}
   - component: {fileID: 473394279}
+  - component: {fileID: 473394281}
   m_Layer: 0
   m_Name: FirePotion
   m_TagString: Untagged
@@ -686,12 +702,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473394278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.7784615, y: -0.052102722, z: 0.009765625}
+  m_LocalPosition: {x: 0.24, y: -2.46, z: 0.009765625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &473394281
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473394278}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &544339684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1553,6 +1595,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InvisibleWall
       objectReference: {fileID: 0}
+    - target: {fileID: 1775073213471409481, guid: c9174852e80a75b439848e3e8bf61f42,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1775073213471409487, guid: c9174852e80a75b439848e3e8bf61f42,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2003,7 +2050,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674226345}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.42, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2004609607}
