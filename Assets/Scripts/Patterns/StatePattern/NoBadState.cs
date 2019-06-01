@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class NoBadState : DebuffState
 {
-    public override void debuffEffect(Rigidbody2D rigidbody)
+    public NoBadState(PlayerState player) : base(player){}
+
+    public override void Tick()
     {
-        throw new System.NotImplementedException();
+        
+        Debug.Log("Todo normal por aquí");
     }
+
 }

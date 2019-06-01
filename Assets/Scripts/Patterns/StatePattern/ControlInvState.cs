@@ -4,8 +4,29 @@ using UnityEngine;
 
 public class ControlInvState : DebuffState
 {
-    public override void debuffEffect(Rigidbody2D rigidbody)
+    public ControlInvState(PlayerState player) : base(player){}
+
+    public override void Tick()
     {
-        throw new System.NotImplementedException();
+        StartCoroutine(InvertControl());
+        player.SetState(new NoBadState(player));
+        
+    }
+
+    IEnumerator InvertControl()
+    {
+        player.GetComponent<PlayerController>().speed *= -1f;
+        yield return new WaitForSeconds(3);
+        player.GetComponent<PlayerController>().speed *= -1f;
+    }
+
+    public override void OnStateEnter()
+    {
+        player.GetComponent<SpriteRenderer>().color = Color.green;
+    }
+
+    public override void OnStateExit()
+    {
+        player.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }
