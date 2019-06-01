@@ -8,11 +8,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveVelocity;
     private Rigidbody2D rb;
 
-    public Transform firePoint;
-    public GameObject fireball;
-
-
-    public bool firePower = false;
+    //public GameManager instance;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -24,22 +20,16 @@ public class PlayerController : MonoBehaviour
         Vector2 moveInput =  new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         moveVelocity = moveInput.normalized * speed;
 
-        //Poción de fuego
-        if (Input.GetKeyDown(KeyCode.Q)) {
-            firePower = !firePower;
-            Debug.Log("firePower is: " + firePower);
-        }
         //Disparación de bola de fuego
-        if (Input.GetKeyDown(KeyCode.Space) && firePower) {
-            Instantiate(fireball, firePoint.position, firePoint.rotation);
+        if (Input.GetKeyDown(KeyCode.G) && GameManager.instance.icePower) {
+            Instantiate(GameManager.instance.iceball, GameManager.instance.firePoint.position, GameManager.instance.firePoint.rotation);
+        }
+
+        //Disparación de bola de fuego
+        if (Input.GetKeyDown(KeyCode.Space) && GameManager.instance.firePower) {
+            Instantiate(GameManager.instance.fireball, GameManager.instance.firePoint.position, GameManager.instance.firePoint.rotation);
         }
     }
-
-    public void giveFire() {
-        firePower = true;
-        Debug.Log("giveFire() -- firePower is: " + firePower);
-    }
-
     void FixedUpdate() {
         //Y puede que aquí
         rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);

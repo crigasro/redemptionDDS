@@ -23,6 +23,8 @@ public class FirePotionScript : MonoBehaviour
     void OnTriggerEnter2D (Collider2D collider) {
         Debug.Log("Collision by fireball");
         Destroy(gameObject);
-        Destroy(collider.gameObject);
+        if (collider.gameObject.tag != "Essential") {
+           Destroy(collider.gameObject);
+        }
     }
 }

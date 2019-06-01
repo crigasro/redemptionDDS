@@ -3,7 +3,13 @@ guid: f4db5d53097201a46b49f76ac05fa1ca
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerstate: {instanceID: 0}
+  - firePoint: {instanceID: 0}
+  - fireball: {fileID: 5143647536576459146, guid: 14350e4b76d1e624592de2fc3073a897,
+      type: 3}
+  - iceball: {fileID: 8946566804097433601, guid: 8dbbb1561dd22f84bbf1714f400069c2,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

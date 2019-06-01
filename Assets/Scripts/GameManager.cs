@@ -5,10 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager instance = null;
     public PlayerState playerstate;
+    public Transform firePoint;
+    public GameObject fireball;
+    public GameObject iceball;
+    public bool icePower = false;
+    public bool firePower = false;
 
-
+    void Awake () {
+        MakeSingleton();
+    }
     
     void Start()
     {
@@ -38,5 +45,27 @@ public class GameManager : MonoBehaviour
     public void GiveRandomObjectFromChest()
     {
         //getPlayerState().changeState(getPlayerState().getSlowerState());
+    }
+    
+    public void giveFire() {
+        firePower = true;
+        Debug.Log("giveFire() -- firePower is: " + firePower);
+    }
+
+    public void giveIce() {
+        icePower = true;
+        Debug.Log("giveIce() -- icePower is: " + icePower);
+    }
+    protected void MakeSingleton()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }
