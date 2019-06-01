@@ -27,4 +27,9 @@ public class GameManager : MonoBehaviour
     public void LoadDoorScenario(int actualLevel) {
         SceneManager.LoadScene(actualLevel + 1);
     }
+
+    public void GiveRandomObjectFromChest()
+    {
+        //getPlayerStats().changeState(getPlayerStats().getSlowedState());
+    }
 }
