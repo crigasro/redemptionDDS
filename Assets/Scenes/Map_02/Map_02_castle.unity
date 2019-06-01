@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae8be8d1e03b4454f97f0c7b4fecf924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animDoor: {fileID: 0}
+  animDoor: {fileID: 217237537}
   levers:
   - {fileID: 1065269662}
   - {fileID: 705523524}
@@ -951,7 +951,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 705523527}
-  controller: {fileID: 0}
 --- !u!95 &705523527
 Animator:
   serializedVersion: 3
@@ -4361,7 +4360,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1065269663}
-  controller: {fileID: 0}
 --- !u!1001 &1074687452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5712,7 +5710,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1605252459}
-  controller: {fileID: 217237536}
 --- !u!95 &1605252459
 Animator:
   serializedVersion: 3

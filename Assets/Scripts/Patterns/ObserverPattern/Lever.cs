@@ -8,8 +8,6 @@ public class Lever : Subject
     public Animator anim;
     private bool isActive = false;
 
-    public GameObject controller;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -39,11 +37,11 @@ public class Lever : Subject
             if(isActive) {
                 anim.SetBool("activeLever", false);
                 isActive = false;
-                controller.GetComponent<LeverPuzzle>().ReceiveLeverSignal(gameObject, false);
+                NotifyObserver(NotifType.GeneralMessage, false);
             } else {
                 anim.SetBool("activeLever", true);
                 isActive = true;
-                controller.GetComponent<LeverPuzzle>().ReceiveLeverSignal(gameObject, false);
+                NotifyObserver(NotifType.GeneralMessage, true);
             }
         }
     }
