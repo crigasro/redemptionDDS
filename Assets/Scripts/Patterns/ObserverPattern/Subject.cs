@@ -24,7 +24,6 @@ public abstract class Subject : MonoBehaviour
 
   public void NotifyObserver(NotifType nt, bool extraInfo)
   {
-    // No creo que esta sea la mejor forma de hacer ( me refiero a los parametros que le paso )
     foreach (Observer o in _observers) { o.OnNotify(gameObject, nt, extraInfo); }
   }
 }

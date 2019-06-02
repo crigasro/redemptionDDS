@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     public bool icePower = false;
     public bool firePower = false;
+    public bool lifePower = false;
 
     void Awake () {
         MakeSingleton();
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        firePoint = GameObject.FindGameObjectWithTag("Player").transform.Find("FirePoint");
+        getFirePoint();
         goingState = 0; //de momento
     }
 
@@ -47,6 +48,15 @@ public class GameManager : MonoBehaviour
         // Asociar PlayerState al Jugador y después arrastrar el jugador a playerstate de aqui
         return playerstate;
     }
+
+    public Transform getFirePoint()
+    {
+        if (firePoint == null)
+            firePoint = GameObject.FindGameObjectWithTag("Player").transform.Find("FirePoint");
+
+        return firePoint;
+    }
+
 
     public void LoadNextScenario(int actualLevel) {
         int indextoload = actualLevel + 1;

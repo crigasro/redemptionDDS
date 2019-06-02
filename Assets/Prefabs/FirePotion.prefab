@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 2704559208828785018}
   - component: {fileID: 2704559208828785019}
   - component: {fileID: 2704559208828785016}
-  - component: {fileID: 2704559208828785013}
-  - component: {fileID: 2704559208828785017}
+  - component: {fileID: 3956292893610137225}
   m_Layer: 0
   m_Name: FirePotion
   m_TagString: Untagged
@@ -45,7 +44,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -96,7 +95,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 32767
   m_Sprite: {fileID: 21300000, guid: ddf8838d0a06d8d4c9dec9e3bed69260, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -108,7 +107,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2704559208828785013
+--- !u!114 &3956292893610137225
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,19 +116,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2704559208828785012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe2d1052b1522d47bf92fa1131af251, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  potion: {fileID: 2704559208828785017}
---- !u!114 &2704559208828785017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2704559208828785012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 049eae5d07fc87943a3557e94edec020, type: 3}
+  m_Script: {fileID: 11500000, guid: da247d2043764854e8259fa79be7ef2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

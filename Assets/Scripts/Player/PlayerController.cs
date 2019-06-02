@@ -9,9 +9,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public Rigidbody2D rb;
     
-   
 
-    //public GameManager instance;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,7 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         //Disparación de bola de fuego
         if (Input.GetKeyDown(KeyCode.Space))
-            Instantiate(AssetManager.instance.ProjectilePrefab, GameManager.instance.firePoint.position, Quaternion.identity); 
+            Instantiate(AssetManager.instance.ProjectilePrefab, GameManager.instance.getFirePoint().position, Quaternion.identity); 
     }
     void FixedUpdate() {
         
@@ -33,6 +31,8 @@ public class PlayerController : MonoBehaviour
     private void Move() 
     {
          direction = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(speed * direction, rb.velocity.y);
+         rb.velocity = new Vector2(speed * direction, rb.velocity.y);
     }
+
+    
 }
