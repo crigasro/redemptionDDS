@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 5143647536576459141}
   m_Layer: 0
   m_Name: FireBall
-  m_TagString: Untagged
+  m_TagString: Essential
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,6 +166,5 @@ MonoBehaviour:
   explosionEffect: {fileID: 1134129239631916, guid: 7e48ba6b1b968764490bbc70b66e3fe1,
     type: 3}
   noEffect: {fileID: 100018, guid: a40b64bf23366dc42a892af2c6ff6140, type: 3}
-  aimPos: {x: 0, y: 0, z: 0}
-  target: {fileID: 0}
+  forceDir: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}

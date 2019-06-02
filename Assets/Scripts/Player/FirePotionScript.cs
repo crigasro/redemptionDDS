@@ -7,8 +7,8 @@ public class FirePotionScript : MonoBehaviour
     public float speed;
     public GameObject explosionEffect;
     public GameObject noEffect;
-    public Vector3 aimPos;
-    public Transform target;
+    public Vector3 forceDir;
+
 
 
     public Rigidbody2D rb;
@@ -20,21 +20,20 @@ public class FirePotionScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         startTime = Time.time;
 
-        aimPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 aimPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         aimPos.z = 0;
+
+        forceDir = aimPos - transform.position;
+        forceDir = forceDir.normalized;
+
+        float angle = Mathf.Atan2(forceDir.y, forceDir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
     void Update()
     {
-        Vector3 normalized = aimPos - transform.position;
-        normalized = normalized.normalized;
-
-        rb.AddForce(normalized * speed * Time.deltaTime);
-        Debug.Log("normalized: " + normalized);
-
-        //float angle = Mathf.Atan2(aimPos.y, aimPos.x) * Mathf.Rad2Deg;
-        //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
+        Debug.Log(forceDir * speed * Time.deltaTime);
+        rb.AddForce(forceDir * speed * Time.deltaTime);
 
         if (Time.time >= (startTime + 2f))
             Destroy(gameObject);
