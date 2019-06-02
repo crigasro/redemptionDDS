@@ -33,6 +33,6 @@ public class FireAttack : AttackDecorator
     {
         base.OnSpawn(projectile);
 
-
+        //projectile.getch
     }
 }
