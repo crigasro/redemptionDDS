@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Chest : MonoBehaviour
+public class Chest : Subject
 {
     private Animator animChest;
     private bool inChest;
@@ -39,7 +40,8 @@ public class Chest : MonoBehaviour
     private void OpenChest() {
         if(Input.GetKeyDown(KeyCode.E) && inChest) {
             animChest.SetBool("chestIsOpen", true);
-            //GameManager.instance.GiveRandomObjectFromChest();
+
+            GameManager.instance.GiveRandomStateFromChest();
         }
     }
 }

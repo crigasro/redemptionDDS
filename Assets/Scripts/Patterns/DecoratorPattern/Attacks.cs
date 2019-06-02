@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class FireAttack : AttackDecorator
 {
-    public Vector3 offset = new Vector2(0.25f, 0.25f);
-
-
     public FireAttack(IAttack attack) : base(attack)
     {
         ignoreTags = new List<string> { "Water" };
@@ -30,9 +27,7 @@ public class FireAttack : AttackDecorator
         if (collisionData.gameObject.tag == "Destroyable")
             GameObject.Destroy(collisionData.gameObject);
 
-        GameObject.Instantiate(AssetManager.instance.ExplosionEffect, projectile.transform.position, Quaternion.identity);
-        GameObject.Instantiate(AssetManager.instance.ExplosionEffect, projectile.transform.position + offset, Quaternion.identity);
-        GameObject.Instantiate(AssetManager.instance.ExplosionEffect, projectile.transform.position - offset, Quaternion.identity);
+        DoEffect(AssetManager.instance.ExplosionEffect, projectile);
         Debug.Log("LANDED : FIRE!!!!");
     }
 }
@@ -40,8 +35,6 @@ public class FireAttack : AttackDecorator
 
 public class IceAttack : AttackDecorator
 {
-    public Vector3 offset = new Vector2(0.25f, 0.25f);
-
     public IceAttack(IAttack attack) : base(attack)
     {
         ignoreTags = new List<string> { "Algo" };
@@ -60,9 +53,7 @@ public class IceAttack : AttackDecorator
     {
         base.OnLand(projectile, collisionData);
 
-        GameObject.Instantiate(AssetManager.instance.IceEffect, projectile.transform.position, Quaternion.identity);
-        GameObject.Instantiate(AssetManager.instance.IceEffect, projectile.transform.position + offset, Quaternion.identity);
-        GameObject.Instantiate(AssetManager.instance.IceEffect, projectile.transform.position - offset, Quaternion.identity);
+        DoEffect(AssetManager.instance.IceEffect, projectile);
 
         GameObject.Instantiate(AssetManager.instance.IceEffect2, projectile.transform.position, Quaternion.identity);
         Debug.Log("LANDED : ICE!!!!");

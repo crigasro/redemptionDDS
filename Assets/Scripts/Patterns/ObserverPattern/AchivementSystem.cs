@@ -10,10 +10,13 @@ public class AchivementSystem : Observer
     void Start()
     {
         tutorialChest = FindObjectOfType<FirstChest>();
-        tutorialChest.AttachObserver(this);
+        if (tutorialChest != null)
+            tutorialChest.AttachObserver(this);
+        
         
         pachiv = FindObjectOfType<PotionAchivement>();
-        pachiv.AttachObserver(this);
+        if (pachiv != null)
+            pachiv.AttachObserver(this);
     }
     public override void OnNotify(GameObject go, NotifType nt, bool extraInfo)
     {   

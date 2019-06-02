@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TempleDoor : MonoBehaviour
 {
-    void OnTriggerEnter2D(GameObject other) {
-        if (other.CompareTag("Player"))
+    void OnTriggerEnter2D(Collider2D colData) {
+        if (colData.gameObject.CompareTag("Player"))
         {
             GameManager.instance.LoadNextScenario(6);
         }
