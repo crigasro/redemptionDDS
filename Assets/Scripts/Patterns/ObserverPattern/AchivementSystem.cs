@@ -5,6 +5,7 @@ using UnityEngine;
 public class AchivementSystem : Observer
 {
     private FirstChest tutorialChest;
+    public GameObject achivementText;
     void Start()
     {
         tutorialChest = FindObjectOfType<FirstChest>();
@@ -12,56 +13,28 @@ public class AchivementSystem : Observer
     }
     public override void OnNotify(GameObject go, NotifType nt, bool extraInfo)
     {   
-        
-        switch(nt)
-        {
-            case NotifType.OpenedTutorialChest:
-                UnlockChestAchivement();
-                tutorialChest.DetachObserver(this);
-                break;
-            case NotifType.GotFirePotion:
-                
-                break; 
-            case NotifType.GotIcePotion:
-
-                break;
-            case NotifType.GotLifePotion:
-
-                break;
-        }
-        
+        if(nt == NotifType.AchivementUnlocked)
+            UnlockAchivement();
     }
 
-    private void UnlockChestAchivement()
+    private void UnlockAchivement()
     {
-        GameObject achivementText = GameObject.FindWithTag("AchivementChest");
-        achivementText.SetActive(true);
+        //GameObject achivementText = GameObject.FindWithTag("AchivementChest");
+        Debug.Log("Has llegado al unnlocked");
+        achivementText.gameObject.SetActive(true);
         StartCoroutine(waitTime());
-        achivementText.SetActive(false);
+        achivementText.gameObject.SetActive(false);
     }
-
-    private void UnlockFireAchivement()
-    {
-
-    }
-    private void UnlockIceAchivement()
-    {
-
-    }
-    private void UnlockLifeAchivement()
-    {
-
-    }
-
     IEnumerator waitTime()
     {
         yield return new WaitForSeconds(3);
+        Debug.Log("Esperados 3 segundos");
     }
 }
 
 public enum NotifType {
     ActivatedDoor, GeneralMessage, 
-    OpenedTutorialChest, GotFirePotion, GotIcePotion, GotLifePotion 
+    AchivementUnlocked 
 }
 
 

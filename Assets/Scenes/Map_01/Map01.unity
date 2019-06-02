@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 384247052}
   m_Layer: 0
   m_Name: Indian
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -517,6 +517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  rb: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,6 +695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cb444a1185c3f9419b61453d50f4ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  achivementText: {fileID: 630586621}
 --- !u!4 &622936259
 Transform:
   m_ObjectHideFlags: 0
@@ -2041,7 +2043,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 6, y: 6, z: 0}
+  - first: {x: 6, y: -1, z: 0}
     second:
       m_TileIndex: 11
       m_TileSpriteIndex: 11
@@ -2050,7 +2052,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 7, y: 6, z: 0}
+  - first: {x: 7, y: -1, z: 0}
     second:
       m_TileIndex: 11
       m_TileSpriteIndex: 11
@@ -2059,7 +2061,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 8, y: 6, z: 0}
+  - first: {x: 8, y: -1, z: 0}
     second:
       m_TileIndex: 11
       m_TileSpriteIndex: 11
@@ -2164,8 +2166,8 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!19719996 &959824192
-TilemapCollider2D:
+--- !u!61 &959824192
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2177,7 +2179,19 @@ TilemapCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -3.599045}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 22, y: 4.80191}
+  m_EdgeRadius: 0
 --- !u!1 &1136259034
 GameObject:
   m_ObjectHideFlags: 0
@@ -2682,7 +2696,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1933146496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ef51ea7eef0e1049b028279873b3ef4, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bff2d13b1027ba43af7622d258fe012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &1933146498
@@ -2791,6 +2805,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Indian
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482499767265989024, guid: 990111e2b69f0014ab84feace7f0a02d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7482499767265989038, guid: 990111e2b69f0014ab84feace7f0a02d,
         type: 3}

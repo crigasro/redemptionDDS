@@ -40,7 +40,7 @@ public class FirstChest : Subject
         if(Input.GetKeyDown(KeyCode.E) && inChest) {
             animChest.SetBool("chestIsOpen", true);
             //GameManager.instance.GiveRandomObjectFromChest();
-            NotifyObserver(NotifType.OpenedTutorialChest, true);
+            NotifyObserver(NotifType.AchivementUnlocked, true);
         }
     }
 }
