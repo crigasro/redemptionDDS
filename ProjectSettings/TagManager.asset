@@ -7,6 +7,7 @@ TagManager:
   - Water
   - Essential
   - FxTemporaire
+  - Destroyable
   layers:
   - Default
   - TransparentFX
