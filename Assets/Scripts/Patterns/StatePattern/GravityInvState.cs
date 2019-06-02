@@ -8,24 +8,20 @@ public class GravityInvState : DebuffState
 
     public override void Tick()
     {
-        StartCoroutine(ChangeGravity());
-        player.SetState(new NoBadState(player));
-    }
-
-    IEnumerator ChangeGravity() 
-    {
-        player.GetComponent<Rigidbody2D>().gravityScale = -9f;
-        yield return new WaitForSeconds(3);
-        player.GetComponent<Rigidbody2D>().gravityScale = 100f;
+        if (Time.time >= startTime + 3) {
+            player.SetState(new NoBadState(player));
+        }
     }
 
     public override void OnStateEnter()
     {
+        player.GetComponent<Rigidbody2D>().gravityScale = -9f;
         player.GetComponent<SpriteRenderer>().color = Color.blue;
     }
 
     public override void OnStateExit()
     {
+        player.GetComponent<Rigidbody2D>().gravityScale = 100f;
         player.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

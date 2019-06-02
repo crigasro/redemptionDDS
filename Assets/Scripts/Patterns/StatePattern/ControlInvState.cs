@@ -8,25 +8,20 @@ public class ControlInvState : DebuffState
 
     public override void Tick()
     {
-        StartCoroutine(InvertControl());
-        player.SetState(new NoBadState(player));
-        
-    }
-
-    IEnumerator InvertControl()
-    {
-        player.GetComponent<PlayerController>().speed *= -1f;
-        yield return new WaitForSeconds(3);
-        player.GetComponent<PlayerController>().speed *= -1f;
+        if (Time.time >= startTime + 3) {
+            player.SetState(new NoBadState(player));
+        }
     }
 
     public override void OnStateEnter()
     {
+        player.GetComponent<PlayerController>().speed *= -1f;
         player.GetComponent<SpriteRenderer>().color = Color.green;
     }
 
     public override void OnStateExit()
     {
+        player.GetComponent<PlayerController>().speed *= -1f;
         player.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

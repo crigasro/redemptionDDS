@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        goingState = 1; //de momento
+        goingState = 3; //de momento
     }
 
 
