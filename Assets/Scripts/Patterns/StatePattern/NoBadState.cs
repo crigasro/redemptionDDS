@@ -12,7 +12,7 @@ public class NoBadState : DebuffState
         switch(nextState) 
         {
             case 0:
-                Debug.Log("Todo normal por aquí");
+                //Debug.Log("Todo normal por aquí");
                 break;
             case 1:
                 Debug.Log("Gravedad invertida");

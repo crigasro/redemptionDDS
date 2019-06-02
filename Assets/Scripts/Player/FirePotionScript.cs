@@ -43,7 +43,6 @@ public class FirePotionScript : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(forceDir * speed * Time.deltaTime);
         rb.AddForce(forceDir * speed * Time.deltaTime);
 
         if (Time.time >= (startTime + 2f))

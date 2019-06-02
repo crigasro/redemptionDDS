@@ -23,9 +23,8 @@ public class PlayerController : MonoBehaviour
         moveVelocity = moveInput.normalized * speed;
 
         //Disparación de bola de fuego
-        if (Input.GetKeyDown(KeyCode.G) && GameManager.instance.icePower) {
-            Instantiate(AssetManager.instance.ProjectilePrefab, GameManager.instance.firePoint.position, GameManager.instance.firePoint.rotation); 
-        }
+        if (Input.GetKeyDown(KeyCode.G))
+            Instantiate(AssetManager.instance.ProjectilePrefab, GameManager.instance.firePoint.position, Quaternion.identity); 
     }
     void FixedUpdate() {
         //Y puede que aquí
