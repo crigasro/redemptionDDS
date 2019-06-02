@@ -7,11 +7,13 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private Vector2 moveVelocity;
     private Rigidbody2D rb;
+    private Animator anim;
 
     //public GameManager instance;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
     void Update()
     {
@@ -33,5 +35,6 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate() {
         //Y puede que aquí
         rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+        anim.SetFloat("x", moveVelocity.x);
     }
 }

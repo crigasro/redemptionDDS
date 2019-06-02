@@ -4,29 +4,27 @@ using UnityEngine;
 
 public class SlowedState : DebuffState
 {
+    private float anterior;
+
      public SlowedState(PlayerState player) : base(player){}
 
     public override void Tick()
     {
-        StartCoroutine(SlowCharacter());
-        player.SetState(new NoBadState(player));
-    }
-
-    IEnumerator SlowCharacter()
-    {
-        float anterior = player.GetComponent<PlayerController>().speed;
-        player.GetComponent<PlayerController>().speed = anterior/3;
-        yield return new WaitForSeconds(3);
-        player.GetComponent<PlayerController>().speed = anterior;
+        if (Time.time >= startTime + 3) {
+            player.SetState(new NoBadState(player));
+        }
     }
 
     public override void OnStateEnter()
     {
+        anterior = player.GetComponent<PlayerController>().speed;
+        player.GetComponent<PlayerController>().speed = anterior/3;
         player.GetComponent<SpriteRenderer>().color = Color.yellow;
     }
 
     public override void OnStateExit()
     {
+        player.GetComponent<PlayerController>().speed = anterior;
         player.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

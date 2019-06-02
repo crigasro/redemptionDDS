@@ -7,6 +7,7 @@ public class Lever : Subject
     public static Lever instance;
     public Animator anim;
     private bool isActive = false;
+    private bool canUseLever;
 
     // Start is called before the first frame update
     void Start()
@@ -17,22 +18,27 @@ public class Lever : Subject
     // Update is called once per frame
     void Update()
     {
-        
+        UseLevel();
     }
 
     public void OnTriggerEnter2D(Collider2D other) 
     {
-        UseLevel();
+        canUseLever = true;
     }
 
     public void OnTriggerStay2D(Collider2D other) 
     {
-        UseLevel();
+        canUseLever = true;
+    }
+
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        canUseLever = false;
     }
 
     public void UseLevel()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E) && canUseLever)
         {
             if(isActive) {
                 anim.SetBool("activeLever", false);

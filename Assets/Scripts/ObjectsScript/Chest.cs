@@ -13,29 +13,35 @@ public class Chest : MonoBehaviour
      */
 
     private Animator animChest;
+    private bool inChest;
 
     void Start() {
         animChest = GetComponent<Animator>();
     }
-    /*
+
     void Update() {
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            animChest.SetBool("chestIsOpen", true);
-            //Debug.Log("Has precionado la tecla E porque si");
-        }
+        OpenChest();
     }
-     */
+
 
     public void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player") ){
-            OpenChest();
+            inChest = true;
         }
     }
 
     public void OnTriggerStay2D(Collider2D other)
     {
-        OpenChest();
+        if(other.CompareTag("Player") ){
+            inChest = true;
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.CompareTag("Player") ){
+            inChest = true;
+        }
     }
 
     private void OpenChest() {
