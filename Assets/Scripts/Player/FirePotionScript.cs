@@ -17,32 +17,19 @@ public class FirePotionScript : MonoBehaviour
 
     void Start()
     {
-        attackData = new BaseAttack();
-        if (GameManager.instance.firePower)
-            attackData = new FireAttack(attackData);
-        if (GameManager.instance.icePower)
-            attackData = new IceAttack(attackData);
-
-        attackData.OnSpawn(gameObject);
-
-
         rb = GetComponent<Rigidbody2D>();
         startTime = Time.time;
 
-        Vector3 aimPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        aimPos.z = 0;
+        SetupForceMovement();
+        RotateToMouse();
+        SetupAttackData();
 
-        forceDir = aimPos - transform.position;
-        forceDir = forceDir.normalized;
-
-        float angle = Mathf.Atan2(forceDir.y, forceDir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
-        
+        attackData.OnSpawn(gameObject);
     }
 
     void Update()
     {
+
         rb.AddForce(forceDir * speed * Time.deltaTime);
 
         if (Time.time >= (startTime + 2f))
@@ -55,5 +42,30 @@ public class FirePotionScript : MonoBehaviour
             return;
 
         attackData.OnLand(gameObject, collider);
+
+        GameObject.Destroy(gameObject);
+    }
+
+    void SetupAttackData()
+    {
+        attackData = new BaseAttack();
+        if (GameManager.instance.icePower)
+            attackData = new IceAttack(attackData);
+        if (GameManager.instance.firePower)
+            attackData = new FireAttack(attackData);
+    }
+    void SetupForceMovement()
+    {
+        Vector3 aimPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        aimPos.z = 0;
+
+        forceDir = aimPos - transform.position;
+        forceDir = forceDir.normalized;
+    }
+
+    void RotateToMouse()
+    {
+        float angle = Mathf.Atan2(forceDir.y, forceDir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 }
