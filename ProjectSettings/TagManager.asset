@@ -8,6 +8,11 @@ TagManager:
   - Essential
   - FxTemporaire
   - Destroyable
+  - MenuButton
+  - lever2
+  - lever1
+  - lever3
+  - AchivementChest
   layers:
   - Default
   - TransparentFX

@@ -124,7 +124,6 @@ GameObject:
   - component: {fileID: 1064426}
   - component: {fileID: 1064425}
   - component: {fileID: 1064424}
-  - component: {fileID: 1064428}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -212,18 +211,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1064428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1064423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8504ad0f622bde640881352dd094e004, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &10930809
 GameObject:
   m_ObjectHideFlags: 0
@@ -2243,8 +2230,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: LoadNextScenario
+      - m_Target: {fileID: 2088243256}
+        m_MethodName: ClickToNext
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2403,11 +2390,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerstate: {fileID: 0}
   firePoint: {fileID: 1674226346}
-  fireball: {fileID: 5143647536576459146, guid: 14350e4b76d1e624592de2fc3073a897,
-    type: 3}
-  iceball: {fileID: 8946566804097433601, guid: 8dbbb1561dd22f84bbf1714f400069c2, type: 3}
   icePower: 0
   firePower: 0
+  lifePower: 0
 --- !u!4 &1141610867
 Transform:
   m_ObjectHideFlags: 0
@@ -3859,13 +3844,14 @@ GameObject:
   - component: {fileID: 2088243253}
   - component: {fileID: 2088243255}
   - component: {fileID: 2088243254}
+  - component: {fileID: 2088243256}
   m_Layer: 5
   m_Name: GotPotionMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2088243253
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3925,6 +3911,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088243252}
   m_CullTransparentMesh: 0
+--- !u!114 &2088243256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088243252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8504ad0f622bde640881352dd094e004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &184010561016316071 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 117786235551744806, guid: b5df3854e5724e7469b4ea96d2d62663,
