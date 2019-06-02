@@ -13,6 +13,7 @@ public class AssetManager : MonoBehaviour
 
     public GameObject ExplosionEffect;
     public GameObject IceEffect;
+    public GameObject IceEffect2;
 
 
     public Sprite FireSprite;

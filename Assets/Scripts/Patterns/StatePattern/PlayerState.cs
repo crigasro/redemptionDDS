@@ -15,7 +15,8 @@ public class PlayerState : MonoBehaviour
         SetState(new NoBadState(this));
     }
     
-    void Update() { 
+    void Update() {
+        if (currentState != null)
         currentState.Tick();
     }
 
