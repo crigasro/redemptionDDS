@@ -5,9 +5,9 @@ using UnityEngine;
 public class FirePotionScript : MonoBehaviour
 {
     public float speed;
-    public GameObject explosionEffect;
-    public GameObject noEffect;
     public Vector3 forceDir;
+
+    IAttack attackData;
 
 
 
@@ -17,6 +17,15 @@ public class FirePotionScript : MonoBehaviour
 
     void Start()
     {
+        attackData = new BaseAttack();
+        if (GameManager.instance.firePower)
+            attackData = new FireAttack(attackData);
+        if (GameManager.instance.icePower)
+            attackData = new IceAttack(attackData);
+
+        attackData.OnSpawn(gameObject);
+
+
         rb = GetComponent<Rigidbody2D>();
         startTime = Time.time;
 
@@ -28,6 +37,8 @@ public class FirePotionScript : MonoBehaviour
 
         float angle = Mathf.Atan2(forceDir.y, forceDir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        
     }
 
     void Update()
@@ -44,10 +55,6 @@ public class FirePotionScript : MonoBehaviour
         if (collider.gameObject.tag == "Essential" || collider.gameObject.tag == "Player")
             return;
 
-        if (collider.gameObject.tag == "Destroyable")
-            Destroy(collider.gameObject);
-
-        Instantiate(explosionEffect, gameObject.transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        attackData.OnLand(gameObject, collider);
     }
 }

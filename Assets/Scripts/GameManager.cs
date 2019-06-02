@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
     public PlayerState playerstate;
     private int goingState;
+
+    [HideInInspector]
     public Transform firePoint;
-    public GameObject fireball;
-    public GameObject iceball;
+
     public bool icePower = false;
     public bool firePower = false;
 
@@ -20,6 +22,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
+        firePoint = GameObject.FindGameObjectWithTag("Player").transform.Find("FirePoint");
         goingState = 3; //de momento
     }
 
