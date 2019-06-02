@@ -410,10 +410,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 79032043}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb70db2025bfa6d4abb264b1c98eb865, type: 3}
+  m_Script: {fileID: 11500000, guid: b994baf43f7f73945a3751c31a33fdfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 771029255}
+  target: {fileID: 771029262}
+  distance: -10
+  height: 0
+  damping: 5
+  mapX: 60
+  mapY: 100
 --- !u!1 &88931673
 GameObject:
   m_ObjectHideFlags: 0
@@ -3885,9 +3890,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d5f44c95a099d741855f4c66dbbf660, type: 3}
---- !u!1 &771029255 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4437659281190692768, guid: 0d5f44c95a099d741855f4c66dbbf660,
+--- !u!4 &771029262 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4731442232937388872, guid: 0d5f44c95a099d741855f4c66dbbf660,
     type: 3}
   m_PrefabInstance: {fileID: 770149595}
   m_PrefabAsset: {fileID: 0}
