@@ -24,9 +24,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         getFirePoint();
-        goingState = 0; //de momento
+        goingState = 0;
     }
-
 
     void Update()
     {
@@ -63,10 +62,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(indextoload);
     }
 
-    public void GiveRandomObjectFromChest()
+    public void GiveRandomStateFromChest()
     {
-        //getPlayerState().changeState(getPlayerState().getSlowerState());
-        goingState = 1; //gravedad invertida --desde player state se pone a 0 (no bad efect) (?)
+        setGoingState(Random.Range(0,4));
     }
     
     public void giveFire() {
