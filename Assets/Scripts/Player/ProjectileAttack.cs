@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirePotionScript : MonoBehaviour
+public class ProjectileAttack : MonoBehaviour
 {
     public float speed;
     public Vector3 forceDir;

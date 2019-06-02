@@ -2,48 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IAttack
-{
-    void OnSpawn(GameObject projectile);
-    void OnLand(GameObject projectile, Collider2D collisionData);
-}
-
-public class BaseAttack : IAttack
-{
-    public void OnSpawn(GameObject projectile) {
-        Debug.Log("Spawned Base Attack!");
-    }
-    public void OnLand(GameObject projectile, Collider2D collisionData)
-    {
-        Debug.Log("Landed base attack!");
-    }
-
-}
-
-
-public abstract class AttackDecorator : IAttack
-{
-    private IAttack _attack;
-    protected List<string> ignoreTags = new List<string>();
-
-    public AttackDecorator(IAttack attack)
-    {
-        this._attack = attack;
-    }
-
-    public virtual void OnSpawn(GameObject projectile) {
-        this._attack.OnSpawn(projectile);
-    }
-    public virtual void OnLand(GameObject projectile, Collider2D collisionData) {
-        this._attack.OnLand(projectile, collisionData);
-    }
-
-}
-
 public class FireAttack : AttackDecorator
 {
     public Vector3 offset = new Vector2(0.25f, 0.25f);
-    
+
 
     public FireAttack(IAttack attack) : base(attack)
     {
