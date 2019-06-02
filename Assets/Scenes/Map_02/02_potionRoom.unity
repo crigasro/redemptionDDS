@@ -4728,8 +4728,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Esta poci\xF3n te otorga el poder del fuego en tus ataques.\n\n\"A trav\xE9s
-    del fuego y de las llamas, avanzamos\""
+  m_Text: "Esta poci\xF3n te otorga el poder del fuego en tus ataques.\n\"A trav\xE9s
+    del fuego y de las llamas, avanzamos\"\nESPACIO para usar este poder (apunta)"
 --- !u!222 &1544377917
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4979,6 +4979,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4731442232937388872, guid: 0d5f44c95a099d741855f4c66dbbf660,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731442232937388872, guid: 0d5f44c95a099d741855f4c66dbbf660,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731442232937388872, guid: 0d5f44c95a099d741855f4c66dbbf660,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307005195239478255, guid: 0d5f44c95a099d741855f4c66dbbf660,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1306965953409661706, guid: 0d5f44c95a099d741855f4c66dbbf660,
         type: 3}
       propertyPath: m_Name
@@ -5045,26 +5065,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1306965953409661707, guid: 0d5f44c95a099d741855f4c66dbbf660,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4731442232937388872, guid: 0d5f44c95a099d741855f4c66dbbf660,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.87
-      objectReference: {fileID: 0}
-    - target: {fileID: 4731442232937388872, guid: 0d5f44c95a099d741855f4c66dbbf660,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 4731442232937388872, guid: 0d5f44c95a099d741855f4c66dbbf660,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4307005195239478255, guid: 0d5f44c95a099d741855f4c66dbbf660,
         type: 3}
       propertyPath: m_SortingOrder
       value: 50
