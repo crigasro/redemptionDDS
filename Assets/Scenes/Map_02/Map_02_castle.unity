@@ -1021,11 +1021,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerstate: {fileID: 0}
   firePoint: {fileID: 0}
-  fireball: {fileID: 5143647536576459146, guid: 14350e4b76d1e624592de2fc3073a897,
-    type: 3}
-  iceball: {fileID: 8946566804097433601, guid: 8dbbb1561dd22f84bbf1714f400069c2, type: 3}
   icePower: 0
   firePower: 0
+  lifePower: 0
 --- !u!4 &772302457
 Transform:
   m_ObjectHideFlags: 0
@@ -5507,7 +5505,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\xBF 2 + 1 ?\nPiensalo 10 veces"
+  m_Text: "\xBF 2 + 1 ?\nPiensalo 11 veces"
 --- !u!222 &1141900096
 CanvasRenderer:
   m_ObjectHideFlags: 0
