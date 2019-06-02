@@ -5,8 +5,26 @@ using UnityEngine;
 public interface IAttack
 {
     void OnSpawn(GameObject projectile);
-    void OnLand(GameObject projectile, Collision2D collisionData);
+    void OnLand(GameObject projectile, Collider2D collisionData);
 }
+
+public class BaseAttack : IAttack
+{
+    public void OnSpawn(GameObject projectile) {
+        Debug.Log("Spawned Base Attack!");
+    }
+    public void OnLand(GameObject projectile, Collider2D collisionData)
+    {
+        if (collisionData.gameObject.tag == "Destroyable")
+            GameObject.Destroy(collisionData.gameObject);
+
+
+        Debug.Log("Landed base attack!");
+        GameObject.Destroy(projectile);
+    }
+
+}
+
 
 public abstract class AttackDecorator : IAttack
 {
@@ -18,10 +36,7 @@ public abstract class AttackDecorator : IAttack
     }
 
     public virtual void OnSpawn(GameObject projectile) { }
-    public virtual void OnLand(GameObject projectile, Collision2D collisionData) {
-
-        GameObject.Destroy(projectile);
-    }
+    public virtual void OnLand(GameObject projectile, Collider2D collisionData) { }
 
 }
 
@@ -40,7 +55,7 @@ public class FireAttack : AttackDecorator
         Debug.Log("SPAWNED : FIRE!!!!");
     }
 
-    public override void OnLand(GameObject projectile, Collision2D collisionData)
+    public override void OnLand(GameObject projectile, Collider2D collisionData)
     {
         base.OnLand(projectile, collisionData);
 
@@ -65,7 +80,7 @@ public class IceAttack : AttackDecorator
         Debug.Log("SPAWNED : ICE!!!!");
     }
 
-    public override void OnLand(GameObject projectile, Collision2D collisionData)
+    public override void OnLand(GameObject projectile, Collider2D collisionData)
     {
         base.OnLand(projectile, collisionData);
 
