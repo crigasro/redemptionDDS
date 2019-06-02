@@ -45,11 +45,7 @@ public class GameManager : MonoBehaviour
         return playerstate;
     }
 
-    public void LoadScenario(int buildSettingsIndex) {
-        SceneManager.LoadScene(buildSettingsIndex);
-    }
-
-    public void LoadDoorScenario(int actualLevel) {
+    public void LoadNextScenario(int actualLevel) {
         int indextoload = actualLevel + 1;
         SceneManager.LoadScene(indextoload);
     }

@@ -9,13 +9,7 @@ AnimatorController:
   m_Name: SmallIndianController
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: indian_moving
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: indian_x
+  - m_Name: x
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -73,10 +67,10 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 110207008}
-    m_Position: {x: 204, y: 60, z: 0}
+    m_Position: {x: 132, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102130768087271244}
-    m_Position: {x: 444, y: 60, z: 0}
+    m_Position: {x: 516, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102287313946876098}
     m_Position: {x: 324, y: 180, z: 0}
@@ -98,9 +92,12 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: indian_moving
-    m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: x
+    m_EventTreshold: -0.01
+  - m_ConditionMode: 4
+    m_ConditionEvent: x
+    m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102287313946876098}
   m_Solo: 0
@@ -124,8 +121,8 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: indian_x
-    m_EventTreshold: 0
+    m_ConditionEvent: x
+    m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102130768087271244}
   m_Solo: 0
@@ -149,8 +146,8 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: indian_x
-    m_EventTreshold: 0
+    m_ConditionEvent: x
+    m_EventTreshold: -0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 110207008}
   m_Solo: 0
@@ -174,8 +171,8 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: indian_x
-    m_EventTreshold: 0
+    m_ConditionEvent: x
+    m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102130768087271244}
   m_Solo: 0
@@ -198,9 +195,12 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: indian_moving
-    m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: x
+    m_EventTreshold: -0.01
+  - m_ConditionMode: 4
+    m_ConditionEvent: x
+    m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102287313946876098}
   m_Solo: 0
@@ -224,11 +224,8 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: indian_x
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: indian_moving
-    m_EventTreshold: 0
+    m_ConditionEvent: x
+    m_EventTreshold: -0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 110207008}
   m_Solo: 0

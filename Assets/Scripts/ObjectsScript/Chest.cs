@@ -40,12 +40,12 @@ public class Chest : MonoBehaviour
     public void OnTriggerExit2D(Collider2D other)
     {
         if(other.CompareTag("Player") ){
-            inChest = true;
+            inChest = false;
         }
     }
 
     private void OpenChest() {
-        if(Input.GetKeyDown(KeyCode.E)) {
+        if(Input.GetKeyDown(KeyCode.E) && inChest) {
             animChest.SetBool("chestIsOpen", true);
             //GameManager.instance.GiveRandomObjectFromChest();
         }
