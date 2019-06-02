@@ -35,7 +35,7 @@ public class DoorManagement : Observer
     public void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player") && openDoor) {
-            GameManager.instance.LoadDoorScenario(SceneManager.GetActiveScene().buildIndex);
+            GameManager.instance.LoadNextScenario(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
@@ -65,6 +65,9 @@ public class DoorManagement : Observer
         if(isCorrect)
         {
             Debug.Log("COMBINACIÓN CORRECTA");
+            foreach(var lev in levers){
+                lev.DetachObserver(this);
+            }
             animDoor.SetBool("openDoor", true);
             openDoor = true;
         }

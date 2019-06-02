@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: a1f34718f5b18b04496f3532d258252d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Map_01/Map01.unity
     guid: 02699b28f7211f348b5522ab51a6ed81
   - enabled: 1
@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map_02/02_potionRoom.unity
     guid: 4c91bb26e00263c4d9ed18e8f779b554
+  - enabled: 1
+    path: Assets/Scenes/Map_03/Map_03.unity
+    guid: 374a0f6f3757fa444a21e80aa1c65e28
+  - enabled: 1
+    path: Assets/Scenes/Map_04/Map_04.unity
+    guid: 114211944ddeb774caeef120dddfb680
+  - enabled: 1
+    path: Assets/Scenes/Map_Final/Map_Final.unity
+    guid: 5194e03654c983c42b729b47fb70b548
   m_configObjects: {}
