@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         getFirePoint();
-        goingState = 3; //de momento
+        goingState = 0; //de momento
     }
 
 

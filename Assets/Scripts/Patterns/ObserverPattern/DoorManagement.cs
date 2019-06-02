@@ -65,9 +65,9 @@ public class DoorManagement : Observer
         if(isCorrect)
         {
             Debug.Log("COMBINACIÓN CORRECTA");
-            foreach(var lev in levers){
+            /* foreach(var lev in levers){
                 lev.DetachObserver(this);
-            }
+            } */
             animDoor.SetBool("openDoor", true);
             openDoor = true;
         }

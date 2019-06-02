@@ -158,7 +158,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &172444316
 PrefabInstance:
@@ -215,7 +215,7 @@ PrefabInstance:
     - target: {fileID: 2704559208828785018, guid: 9c85b79d401cb7545aa8c02585251991,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2704559208828785018, guid: 9c85b79d401cb7545aa8c02585251991,
         type: 3}
@@ -662,7 +662,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &997095061
 GameObject:
@@ -4576,7 +4576,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1309332832
 PrefabInstance:
@@ -4966,7 +4966,7 @@ Transform:
   m_Children:
   - {fileID: 997095062}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1790253401
 PrefabInstance:
@@ -5064,12 +5064,7 @@ PrefabInstance:
     - target: {fileID: 4731442232937388872, guid: 0d5f44c95a099d741855f4c66dbbf660,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4307005195239478255, guid: 0d5f44c95a099d741855f4c66dbbf660,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 50
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1306965953409661706, guid: 0d5f44c95a099d741855f4c66dbbf660,
         type: 3}
@@ -5136,6 +5131,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4307005195239478255, guid: 0d5f44c95a099d741855f4c66dbbf660,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1306965953409661707, guid: 0d5f44c95a099d741855f4c66dbbf660,
         type: 3}
       propertyPath: m_SortingOrder
@@ -5199,7 +5199,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1951517106
 BoxCollider2D:
@@ -5320,7 +5320,7 @@ RectTransform:
   m_Children:
   - {fileID: 793336405}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5415,3 +5415,54 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2003783417}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2124956525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2124956527}
+  - component: {fileID: 2124956526}
+  m_Layer: 0
+  m_Name: AssetManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2124956526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124956525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133588619784bc04388ac7c1cd0a0a4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProjectilePrefab: {fileID: 1994478271025584775, guid: 11927a62b4e549c41968727a3973683f,
+    type: 3}
+  ExplosionEffect: {fileID: 1134129239631916, guid: 7e48ba6b1b968764490bbc70b66e3fe1,
+    type: 3}
+  IceEffect: {fileID: 100000, guid: f2dba9e16cd347f44a395b8204544ee5, type: 3}
+  IceEffect2: {fileID: 100008, guid: 1ca16f2a31fb6a548ad8954bed1d321f, type: 3}
+  FireSprite: {fileID: 21300000, guid: ad5e96632cdabac49b2d245d893d90e9, type: 3}
+  IceSprite: {fileID: 21300000, guid: f0caf017191fe1b4e97a49965f3f5995, type: 3}
+--- !u!4 &2124956527
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124956525}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.4610403, y: -1.365956, z: -0.09196741}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

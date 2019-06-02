@@ -145,6 +145,7 @@ MonoBehaviour:
   firePoint: {fileID: 0}
   icePower: 0
   firePower: 0
+  lifePower: 0
 --- !u!4 &56142478
 Transform:
   m_ObjectHideFlags: 0
