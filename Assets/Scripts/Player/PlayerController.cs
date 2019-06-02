@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
-    Rigidbody2D rb;
+    private float direction;
     private Animator anim;
+    public float speed;
+    public Rigidbody2D rb;
+    
+   
 
     //public GameManager instance;
     void Start()
@@ -21,9 +24,15 @@ public class PlayerController : MonoBehaviour
             Instantiate(AssetManager.instance.ProjectilePrefab, GameManager.instance.firePoint.position, Quaternion.identity); 
     }
     void FixedUpdate() {
-        float move = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(speed * move, rb.velocity.y);
+        
         //Y puede que aquí
-        anim.SetFloat("x", move);
+        Move();
+        anim.SetFloat("x", direction);
+    }
+
+    private void Move() 
+    {
+         direction = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(speed * direction, rb.velocity.y);
     }
 }
