@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         //Disparación de bola de fuego
         if (Input.GetKeyDown(KeyCode.Space))
-            Instantiate(AssetManager.instance.ProjectilePrefab, GameManager.instance.firePoint.position, Quaternion.identity); 
+            Instantiate(AssetManager.instance.ProjectilePrefab, GameManager.instance.getFirePoint().position, Quaternion.identity); 
     }
     void FixedUpdate() {
         
