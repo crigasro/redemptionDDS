@@ -24,12 +24,7 @@ public class PlayerController : MonoBehaviour
 
         //Disparación de bola de fuego
         if (Input.GetKeyDown(KeyCode.G) && GameManager.instance.icePower) {
-            Instantiate(GameManager.instance.iceball, GameManager.instance.firePoint.position, GameManager.instance.firePoint.rotation);
-        }
-
-        //Disparación de bola de fuego
-        if (Input.GetKeyDown(KeyCode.Space) && GameManager.instance.firePower) {
-            Instantiate(GameManager.instance.fireball, GameManager.instance.firePoint.position, GameManager.instance.firePoint.rotation);
+            Instantiate(GameManager.instance.iceball, GameManager.instance.firePoint.position, GameManager.instance.firePoint.rotation); 
         }
     }
     void FixedUpdate() {
