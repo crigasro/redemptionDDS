@@ -26,11 +26,6 @@ public class DoorManagement : Observer
 
     public override void OnNotify(GameObject go, NotifType nt, bool leverstatus)
     {
-        if(nt.Equals(NotifType.ActivatedDoor))
-        {
-            animDoor.SetBool("activeDoor", true);
-            openDoor = true;
-        }
         if(nt.Equals(NotifType.GeneralMessage))
         {
             ManageLeverNotification(go, leverstatus);
@@ -70,6 +65,7 @@ public class DoorManagement : Observer
         if(isCorrect)
         {
             Debug.Log("COMBINACIÓN CORRECTA");
+            animDoor.SetBool("openDoor", true);
             openDoor = true;
         }
     }
