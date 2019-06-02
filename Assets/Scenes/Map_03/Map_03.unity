@@ -2865,9 +2865,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< HEAD
---- !u!1 &1488321204
-=======
 --- !u!1 &1463621981
 GameObject:
   m_ObjectHideFlags: 0
@@ -3146,7 +3143,6 @@ Transform:
   m_PrefabInstance: {fileID: 3819772622949515874}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1545890172
->>>>>>> e956d303168fc09761495e9c276debe617967134
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
