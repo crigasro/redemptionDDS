@@ -16,10 +16,16 @@ EditorBuildSettings:
     guid: 02699b28f7211f348b5522ab51a6ed81
   - enabled: 1
     path: Assets/Scenes/Map_02/Map_02_castle.unity
-    guid: 540793ac77384514b93cf042d92eded7
+    guid: 35b574faed321f74c826d2d8d4f2766a
   - enabled: 1
     path: Assets/Scenes/Map_02/02_potionRoom.unity
-    guid: 4c91bb26e00263c4d9ed18e8f779b554
+    guid: 5b65f65521c8d484ead005a5113154cf
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Map_03/Map_03.unity
     guid: 374a0f6f3757fa444a21e80aa1c65e28

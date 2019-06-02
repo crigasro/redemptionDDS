@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: tile_jungle_water_7
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 21300014, guid: 311a78981d91bed468d48c17f23f7fb9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.60784316}
   m_Transform:
     e00: 1
     e01: 0
