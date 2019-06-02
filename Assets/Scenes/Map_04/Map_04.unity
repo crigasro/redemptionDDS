@@ -4921,8 +4921,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Esta poci\xF3n te otorga el poder del las plantas salvajs en tus ataques.\n\n\"Tra
-    Tr\xE1\""
+  m_Text: "Su poder sanador es capaz de resucitar a los muertos\n\"Tra Tr\xE1\""
 --- !u!222 &2097410201
 CanvasRenderer:
   m_ObjectHideFlags: 0
