@@ -15,12 +15,7 @@ public class BaseAttack : IAttack
     }
     public void OnLand(GameObject projectile, Collider2D collisionData)
     {
-        if (collisionData.gameObject.tag == "Destroyable")
-            GameObject.Destroy(collisionData.gameObject);
-
-
         Debug.Log("Landed base attack!");
-        GameObject.Destroy(projectile);
     }
 
 }
@@ -29,22 +24,30 @@ public class BaseAttack : IAttack
 public abstract class AttackDecorator : IAttack
 {
     private IAttack _attack;
+    protected List<string> ignoreTags = new List<string>();
 
     public AttackDecorator(IAttack attack)
     {
         this._attack = attack;
     }
 
-    public virtual void OnSpawn(GameObject projectile) { }
-    public virtual void OnLand(GameObject projectile, Collider2D collisionData) { }
+    public virtual void OnSpawn(GameObject projectile) {
+        this._attack.OnSpawn(projectile);
+    }
+    public virtual void OnLand(GameObject projectile, Collider2D collisionData) {
+        this._attack.OnLand(projectile, collisionData);
+    }
 
 }
 
 public class FireAttack : AttackDecorator
 {
+    public Vector3 offset = new Vector2(0.25f, 0.25f);
+    
+
     public FireAttack(IAttack attack) : base(attack)
     {
-
+        ignoreTags = new List<string> { "Water" };
     }
 
     public override void OnSpawn(GameObject projectile)
@@ -59,7 +62,15 @@ public class FireAttack : AttackDecorator
     {
         base.OnLand(projectile, collisionData);
 
-        GameObject.Instantiate(AssetManager.instance.FireSprite, projectile.transform.position, Quaternion.identity);
+        if (ignoreTags.Contains(collisionData.gameObject.tag))
+            return;
+
+        if (collisionData.gameObject.tag == "Destroyable")
+            GameObject.Destroy(collisionData.gameObject);
+
+        GameObject.Instantiate(AssetManager.instance.ExplosionEffect, projectile.transform.position, Quaternion.identity);
+        GameObject.Instantiate(AssetManager.instance.ExplosionEffect, projectile.transform.position + offset, Quaternion.identity);
+        GameObject.Instantiate(AssetManager.instance.ExplosionEffect, projectile.transform.position - offset, Quaternion.identity);
         Debug.Log("LANDED : FIRE!!!!");
     }
 }
@@ -67,16 +78,19 @@ public class FireAttack : AttackDecorator
 
 public class IceAttack : AttackDecorator
 {
+    public Vector3 offset = new Vector2(0.25f, 0.25f);
+
     public IceAttack(IAttack attack) : base(attack)
     {
-
+        ignoreTags = new List<string> { "Algo" };
     }
 
     public override void OnSpawn(GameObject projectile)
     {
         base.OnSpawn(projectile);
 
-        //projectile.GetComponentInChildren<SpriteRenderer>().sprite = AssetManager.instance.FireSprite;
+        projectile.GetComponentInChildren<SpriteRenderer>().sprite = AssetManager.instance.IceSprite;
+        projectile.GetComponentInChildren<SpriteRenderer>().color = new Color(0, 255, 255);
         Debug.Log("SPAWNED : ICE!!!!");
     }
 
@@ -84,7 +98,20 @@ public class IceAttack : AttackDecorator
     {
         base.OnLand(projectile, collisionData);
 
-        //GameObject.Instantiate(AssetManager.instance.FireSprite, projectile.transform.position, Quaternion.identity);
+        GameObject.Instantiate(AssetManager.instance.IceEffect, projectile.transform.position, Quaternion.identity);
+        GameObject.Instantiate(AssetManager.instance.IceEffect, projectile.transform.position + offset, Quaternion.identity);
+        GameObject.Instantiate(AssetManager.instance.IceEffect, projectile.transform.position - offset, Quaternion.identity);
+
+        GameObject.Instantiate(AssetManager.instance.IceEffect2, projectile.transform.position, Quaternion.identity);
         Debug.Log("LANDED : ICE!!!!");
+
+        if (collisionData.gameObject.tag == "Water")
+        {
+            Vector3 offset = new Vector3(0, 2f, 0f);
+
+            collisionData.gameObject.GetComponent<SpriteRenderer>().color = new Color(0f, 1f, 1f, 0.5f);
+            collisionData.gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+            collisionData.gameObject.GetComponent<BuoyancyEffector2D>().useColliderMask = false;
+        }
     }
 }

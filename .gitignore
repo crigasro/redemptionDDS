@@ -57,3 +57,5 @@ sysinfo.txt
 crashlytics-build.properties
 ProjectSettings/ProjectVersion.txt
 ProjectSettings/ProjectVersion.txt
+ProjectSettings/QualitySettings.asset
+ProjectSettings/UnityConnectSettings.asset
