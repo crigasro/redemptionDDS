@@ -30,9 +30,10 @@ public class FirePotionScript : MonoBehaviour
         normalized = normalized.normalized;
 
         rb.AddForce(normalized * speed * Time.deltaTime);
+        Debug.Log("normalized: " + normalized);
 
-        float angle = Mathf.Atan2(aimPos.y, aimPos.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        //float angle = Mathf.Atan2(aimPos.y, aimPos.x) * Mathf.Rad2Deg;
+        //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
 
         if (Time.time >= (startTime + 2f))
