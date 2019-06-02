@@ -5,14 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class DoorManagement : Observer
 {
-    // Como la puerta espera a que pase algo 
-    // (que se resuelva el puzzle por ejemplo en el castillo)
-    // es un observador
     public Animator animDoor;
-    private bool openDoor = false;
-
     public GameObject[] leversObj;
     public Lever[] levers;
+    private bool openDoor = false;
     private bool[] correctCombination = new bool[] {false, true, true};
     private bool[] playerCombination = new bool[3];
 
@@ -26,7 +22,7 @@ public class DoorManagement : Observer
 
     public override void OnNotify(GameObject go, NotifType nt, bool leverstatus)
     {
-        if(nt.Equals(NotifType.GeneralMessage))
+        if(nt.Equals(NotifType.ActivatedDoor))
         {
             ManageLeverNotification(go, leverstatus);
         }
@@ -57,17 +53,11 @@ public class DoorManagement : Observer
         for(int i = 0; i < 3; i++){
             if(playerCombination[i] != correctCombination[i])
             {
-                isCorrect = false;
-                Debug.Log("No es correcta la combinacion");
-                return;
+                isCorrect = false; return;
             }
         }
         if(isCorrect)
         {
-            Debug.Log("COMBINACIÓN CORRECTA");
-            /* foreach(var lev in levers){
-                lev.DetachObserver(this);
-            } */
             animDoor.SetBool("openDoor", true);
             openDoor = true;
         }
