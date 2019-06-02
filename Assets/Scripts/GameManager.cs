@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         firePoint = GameObject.FindGameObjectWithTag("Player").transform.Find("FirePoint");
-        goingState = 3; //de momento
+        goingState = 0; //de momento
     }
 
 
