@@ -5,14 +5,10 @@ using UnityEngine;
 public class FirePotionScript : MonoBehaviour
 {
     public float speed;
-    public PlayerController player;
+    public GameObject explosionEffect;
+    public GameObject noEffect;
     void Start()
     {
-        player = FindObjectOfType<PlayerController>();
-        
-        if (player.transform.localScale.x <  0) {
-            speed = -speed;
-        }
     }
 
     void Update()
@@ -25,6 +21,9 @@ public class FirePotionScript : MonoBehaviour
         Destroy(gameObject);
         if (collider.gameObject.tag != "Essential") {
            Destroy(collider.gameObject);
+           Instantiate(explosionEffect, collider.gameObject.transform.position, Quaternion.identity);
+        } else {
+            Instantiate(noEffect, collider.gameObject.transform.position, Quaternion.identity);
         }
     }
 }

@@ -133,3 +133,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedX: 500
   speedY: 800
+  iceEffect: {fileID: 100000, guid: f2dba9e16cd347f44a395b8204544ee5, type: 3}
+  noEffect: {fileID: 100018, guid: a40b64bf23366dc42a892af2c6ff6140, type: 3}
