@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
-    private Vector2 moveVelocity;
-    private Rigidbody2D rb;
+    Rigidbody2D rb;
     private Animator anim;
 
     //public GameManager instance;
@@ -17,18 +16,14 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-
-        //Hacer muchas refactorizaciones aquí -- Lo estoy haciendo muy guarro
-        Vector2 moveInput =  new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        moveVelocity = moveInput.normalized * speed;
-
         //Disparación de bola de fuego
         if (Input.GetKeyDown(KeyCode.G))
             Instantiate(AssetManager.instance.ProjectilePrefab, GameManager.instance.firePoint.position, Quaternion.identity); 
     }
     void FixedUpdate() {
+        float move = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(speed * move, rb.velocity.y);
         //Y puede que aquí
-        rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
-        anim.SetFloat("x", moveVelocity.x);
+        anim.SetFloat("x", move);
     }
 }
