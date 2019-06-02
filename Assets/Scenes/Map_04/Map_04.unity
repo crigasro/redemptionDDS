@@ -754,12 +754,12 @@ PrefabInstance:
     - target: {fileID: 4731442232937388872, guid: 0d5f44c95a099d741855f4c66dbbf660,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.85
+      value: 36.3
       objectReference: {fileID: 0}
     - target: {fileID: 2531420822153612275, guid: 0d5f44c95a099d741855f4c66dbbf660,
         type: 3}
       propertyPath: m_GravityScale
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2531420822153612275, guid: 0d5f44c95a099d741855f4c66dbbf660,
         type: 3}
@@ -769,7 +769,7 @@ PrefabInstance:
     - target: {fileID: 7308850713371393650, guid: 0d5f44c95a099d741855f4c66dbbf660,
         type: 3}
       propertyPath: speed
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1306965953409661706, guid: 0d5f44c95a099d741855f4c66dbbf660,
         type: 3}
