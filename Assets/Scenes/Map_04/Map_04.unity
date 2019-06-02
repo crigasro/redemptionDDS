@@ -124,7 +124,6 @@ GameObject:
   - component: {fileID: 97791675}
   - component: {fileID: 97791674}
   - component: {fileID: 97791673}
-  - component: {fileID: 97791672}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -132,18 +131,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &97791672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 97791671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8504ad0f622bde640881352dd094e004, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &97791673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,13 +580,14 @@ GameObject:
   - component: {fileID: 715912705}
   - component: {fileID: 715912707}
   - component: {fileID: 715912706}
+  - component: {fileID: 715912708}
   m_Layer: 5
   m_Name: GotPotionMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &715912705
 RectTransform:
   m_ObjectHideFlags: 0
@@ -659,6 +647,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715912704}
   m_CullTransparentMesh: 0
+--- !u!114 &715912708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715912704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8504ad0f622bde640881352dd094e004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &806121660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2980,7 +2980,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 97791672}
+      - m_Target: {fileID: 0}
         m_MethodName: ClickToNext
         m_Mode: 1
         m_Arguments:
@@ -3299,6 +3299,7 @@ MonoBehaviour:
   firePoint: {fileID: 1827411469}
   icePower: 0
   firePower: 0
+  lifePower: 0
 --- !u!4 &1785455205
 Transform:
   m_ObjectHideFlags: 0

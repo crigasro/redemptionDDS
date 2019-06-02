@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     public bool icePower = false;
     public bool firePower = false;
+    public bool lifePower = false;
 
     void Awake () {
         MakeSingleton();
