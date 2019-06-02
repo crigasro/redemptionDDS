@@ -4,13 +4,7 @@ using UnityEngine;
 
 public abstract class Subject : MonoBehaviour
 {
-  // Subject = objetos observables. A los que vamos a mirar para ver qué pasa con ellos
-  // y para que notifiquen los cambios.
   private List<Observer> _observers = new List<Observer>();
-
-  protected static string CompletedPuzzle = "COMPLETED_PUZZLE";
-
-
   public void AttachObserver(Observer observer)
   {
     if(_observers.Contains(observer) == false)

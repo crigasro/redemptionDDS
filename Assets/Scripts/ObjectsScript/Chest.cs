@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour
 {
-    /*
-    private string _chestState;
-    public string ChestState {
-        get {return _chestState; }
-        set { _chestState = value; }
-    }
-     */
-
     private Animator animChest;
     private bool inChest;
 

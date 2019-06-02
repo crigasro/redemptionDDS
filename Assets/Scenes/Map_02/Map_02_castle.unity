@@ -5510,7 +5510,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\xBF 2 + 1 ?\nPiensalo 10 veces"
+  m_Text: "\xBF 2 + 1 ?\nPiensalo 11 veces"
 --- !u!222 &1141900096
 CanvasRenderer:
   m_ObjectHideFlags: 0
