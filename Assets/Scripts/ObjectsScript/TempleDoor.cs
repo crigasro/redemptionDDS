@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class TempleDoor : MonoBehaviour
 {
-    // Start is called before the first frame update
+    void OnTriggerEnter2D(GameObject other) {
+        if (other.CompareTag("Player"))
+        {
+            GameManager.instance.LoadNextScenario(6);
+        }
+    }
     
 }
