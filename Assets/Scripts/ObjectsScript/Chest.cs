@@ -41,7 +41,7 @@ public class Chest : Subject
         if(Input.GetKeyDown(KeyCode.E) && inChest) {
             animChest.SetBool("chestIsOpen", true);
 
-            GameManager.instance.GiveRandomStateFromChest();
+            GameManager.instance.GiveRandomState();
         }
     }
 }
