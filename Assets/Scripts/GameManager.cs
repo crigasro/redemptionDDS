@@ -83,6 +83,7 @@ public class GameManager : MonoBehaviour
         lifePower = true;
         Debug.Log("giveLifePower() -- lifePower is: " + lifePower);
     }
+
     protected void MakeSingleton()
     {
         if (instance != null)
@@ -94,5 +95,11 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    public void resetPowers() {
+        icePower  = false;
+        firePower = false;
+        lifePower = false;
     }
 }
