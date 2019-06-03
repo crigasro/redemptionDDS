@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(indextoload);
     }
 
-    public void GiveRandomStateFromChest()
+    public void GiveRandomState()
     {
         setGoingState(Random.Range(0,4));
     }
