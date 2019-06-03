@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public PlayerState playerstate;
-    private int goingState;
+
+    public enum PlayerStates { NoBadState, ControlInvState, GravityInvState, SlowedState }
+    private PlayerStates goingState;
 
     [HideInInspector]
     public Transform firePoint;
@@ -24,7 +26,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         getFirePoint();
-        goingState = 0;
+        goingState = PlayerStates.NoBadState;
     }
 
     void Update()
@@ -32,12 +34,12 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public int getGoingState() 
+    public PlayerStates getGoingState() 
     {
         return goingState;
     }
 
-    public void setGoingState(int gS)
+    public void setGoingState(PlayerStates gS)
     {
         this.goingState = gS;
     }
@@ -64,7 +66,7 @@ public class GameManager : MonoBehaviour
 
     public void GiveRandomState()
     {
-        setGoingState(Random.Range(0,4));
+        setGoingState((PlayerStates) Random.Range(0,4));
     }
     
     public void giveFire() {

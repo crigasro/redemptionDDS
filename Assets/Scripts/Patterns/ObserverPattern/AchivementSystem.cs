@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class AchivementSystem : Observer
 {
     private FirstChest tutorialChest;
     private PotionAchivement pachiv;
 
-    private bool unlocked;
+    public bool unlocked;
 
     void Start()
     {

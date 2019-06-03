@@ -56,7 +56,11 @@ public class ProjectileAttack : MonoBehaviour
     }
     void SetupForceMovement()
     {
-        Vector3 aimPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 aimPos;
+        if (Camera.main == null)
+            aimPos = transform.position;
+        else
+            aimPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         aimPos.z = 0;
 
         forceDir = aimPos - transform.position;

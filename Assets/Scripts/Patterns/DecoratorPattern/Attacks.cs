@@ -13,7 +13,8 @@ public class FireAttack : AttackDecorator
     {
         base.OnSpawn(projectile);
 
-        projectile.GetComponentInChildren<SpriteRenderer>().sprite = AssetManager.instance.FireSprite;
+        projectile.GetComponentInChildren<SpriteRenderer>().sprite = AssetManager.instance.FireSprite ?? Resources.Load <Sprite>("Sprites/fireball_1");
+        Debug.Log(Resources.Load<Sprite>("Sprites/fireball_1"));
         Debug.Log("SPAWNED : FIRE!!!!");
     }
 
@@ -35,6 +36,8 @@ public class FireAttack : AttackDecorator
 
 public class IceAttack : AttackDecorator
 {
+    public static readonly Color AttackColor = new Color(0, 255, 255);
+
     public IceAttack(IAttack attack) : base(attack)
     {
         ignoreTags = new List<string> { "Algo" };
@@ -44,8 +47,8 @@ public class IceAttack : AttackDecorator
     {
         base.OnSpawn(projectile);
 
-        projectile.GetComponentInChildren<SpriteRenderer>().sprite = AssetManager.instance.IceSprite;
-        projectile.GetComponentInChildren<SpriteRenderer>().color = new Color(0, 255, 255);
+        projectile.GetComponentInChildren<SpriteRenderer>().sprite = AssetManager.instance.IceSprite ?? Resources.Load<Sprite>("Sprites/iceball");
+        projectile.GetComponentInChildren<SpriteRenderer>().color = AttackColor;
         Debug.Log("SPAWNED : ICE!!!!");
     }
 
@@ -62,7 +65,7 @@ public class IceAttack : AttackDecorator
         {
             Vector3 offset = new Vector3(0, 2f, 0f);
 
-            collisionData.gameObject.GetComponent<SpriteRenderer>().color = new Color(0f, 1f, 1f, 0.5f);
+            collisionData.gameObject.GetComponent<SpriteRenderer>().color = AttackColor;
             collisionData.gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
             collisionData.gameObject.GetComponent<BuoyancyEffector2D>().useColliderMask = false;
         }

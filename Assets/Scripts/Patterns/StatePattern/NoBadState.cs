@@ -8,25 +8,25 @@ public class NoBadState : DebuffState
 
     public override void Tick()
     {
-        int nextState = GameManager.instance.getGoingState();
+        GameManager.PlayerStates nextState = GameManager.instance.getGoingState();
         switch(nextState) 
         {
-            case 0:
+            case GameManager.PlayerStates.NoBadState:
                 //Debug.Log("Ningún estado a aplicar");
                 break;
-            case 1:
+            case GameManager.PlayerStates.GravityInvState:
                 Debug.Log("Gravedad invertida");
-                GameManager.instance.setGoingState(0);
+                GameManager.instance.setGoingState(GameManager.PlayerStates.NoBadState);
                 player.SetState(new GravityInvState(player));
                 break;
-            case 2:
+            case GameManager.PlayerStates.ControlInvState:
                 Debug.Log("Controles invertidos");
-                GameManager.instance.setGoingState(0);
+                GameManager.instance.setGoingState(GameManager.PlayerStates.NoBadState);
                 player.SetState(new ControlInvState(player));
                 break;
-            case 3:
+            case GameManager.PlayerStates.SlowedState:
                 Debug.Log("Personaje ralentizado");
-                GameManager.instance.setGoingState(0);
+                GameManager.instance.setGoingState(GameManager.PlayerStates.NoBadState);
                 player.SetState(new SlowedState(player));
                 break;
         }

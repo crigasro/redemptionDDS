@@ -14,7 +14,7 @@ public class PotionAchivement : Subject
     bool CanUnlockAchivement()
     {
         int bIndex = SceneManager.GetActiveScene().buildIndex;
-        Debug.Log(bIndex + " firepower: " + GameManager.instance.firePower);
+
         bool achivementA = bIndex == 3 && GameManager.instance.firePower;
         bool achivementB = bIndex == 4 && GameManager.instance.icePower;
         bool achivementC = bIndex == 5 && GameManager.instance.lifePower;

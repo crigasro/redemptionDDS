@@ -5,7 +5,11 @@ using UnityEngine;
 public class PlayerState : MonoBehaviour
 {
     private DebuffState currentState;
-    
+
+    private void Awake()
+    {
+        currentState = new NoBadState(this);
+    }
     void Start() 
     {
         SetState(new NoBadState(this));
@@ -26,4 +30,11 @@ public class PlayerState : MonoBehaviour
         if (currentState != null)
             currentState.OnStateEnter();    
     }    
+
+    public DebuffState getState()
+    {
+        return currentState;
+    }
+
+
 }
