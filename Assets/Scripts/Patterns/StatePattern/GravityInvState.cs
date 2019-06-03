@@ -21,7 +21,7 @@ public class GravityInvState : DebuffState
 
     public override void OnStateExit()
     {
-        player.GetComponent<Rigidbody2D>().gravityScale = 100f;
+        player.GetComponent<Rigidbody2D>().gravityScale = 1f;
         player.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }
