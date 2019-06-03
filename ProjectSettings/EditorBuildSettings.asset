@@ -38,4 +38,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map_Final/CuartoDelFin.unity
     guid: e53f7aafd7f1f0e448f6e8ab1a6ee12b
+  - enabled: 1
+    path: Assets/Scenes/Map_Final/Potion.unity
+    guid: 04eed5fcb9381c74085efe05638e43bf
+  - enabled: 1
+    path: Assets/Scenes/Map_Final/NoPotion.unity
+    guid: f59edca9ebefa92479ca7438c8506914
+  - enabled: 1
+    path: Assets/Scenes/Map_Final/Fin.unity
+    guid: 3493ec4caf138114f8b69de8285ec267
   m_configObjects: {}
