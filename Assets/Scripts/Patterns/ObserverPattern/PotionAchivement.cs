@@ -7,17 +7,18 @@ public class PotionAchivement : Subject
 {
     void Update()
     {
-        if(SceneManager.GetActiveScene().buildIndex == 3 && GameManager.instance.firePower)
-        {
+        if (CanUnlockAchivement())
             NotifyObserver(NotifType.AchivementUnlocked, true);
-        }
-        if(SceneManager.GetActiveScene().buildIndex == 4 && GameManager.instance.icePower)
-        {
-            NotifyObserver(NotifType.AchivementUnlocked, true);
-        }
-        if(SceneManager.GetActiveScene().buildIndex == 5 && GameManager.instance.lifePower)
-        {
-            NotifyObserver(NotifType.AchivementUnlocked, true);
-        }
+    }
+
+    bool CanUnlockAchivement()
+    {
+        int bIndex = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log(bIndex + " firepower: " + GameManager.instance.firePower);
+        bool achivementA = bIndex == 3 && GameManager.instance.firePower;
+        bool achivementB = bIndex == 4 && GameManager.instance.icePower;
+        bool achivementC = bIndex == 5 && GameManager.instance.lifePower;
+
+        return achivementA || achivementB || achivementC;
     }
 }

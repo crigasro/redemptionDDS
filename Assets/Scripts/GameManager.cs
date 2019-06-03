@@ -72,9 +72,16 @@ public class GameManager : MonoBehaviour
         Debug.Log("giveFire() -- firePower is: " + firePower);
     }
 
-    public void giveIce() {
+    public void giveIce()
+    {
         icePower = true;
         Debug.Log("giveIce() -- icePower is: " + icePower);
+    }
+
+    public void giveLifePower()
+    {
+        lifePower = true;
+        Debug.Log("giveLifePower() -- lifePower is: " + lifePower);
     }
     protected void MakeSingleton()
     {

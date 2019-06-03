@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AchivementSystem : Observer
 {
     private FirstChest tutorialChest;
     private PotionAchivement pachiv;
-    public GameObject achivementText;
+
+    private bool unlocked;
+
     void Start()
     {
         tutorialChest = FindObjectOfType<FirstChest>();
@@ -25,11 +28,17 @@ public class AchivementSystem : Observer
     }
     private void UnlockAchivement()
     {
-        achivementText.gameObject.SetActive(true);
+        Debug.Log("UnlockAchivement");
+        if (unlocked) return;
+
+        unlocked = true;
         StartCoroutine(waitTime());
-        achivementText.gameObject.SetActive(false);
     }
-    IEnumerator waitTime() { yield return new WaitForSeconds(3); }
+    IEnumerator waitTime() {
+        GameObject.Find("AchivementUnlocked").transform.localScale = new Vector3(1, 1, 1);
+        yield return new WaitForSeconds(3);
+        GameObject.Find("AchivementUnlocked").transform.localScale = new Vector3(0, 0, 0);
+    }
 }
 
 public enum NotifType {

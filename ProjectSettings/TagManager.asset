@@ -12,7 +12,7 @@ TagManager:
   - lever2
   - lever1
   - lever3
-  - AchivementChest
+  - AchivementGUI
   layers:
   - Default
   - TransparentFX
