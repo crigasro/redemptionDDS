@@ -16,8 +16,5 @@ public abstract class DebuffState
     {
         this.player = player;
         this.startTime = Time.time;
-    }
-
-    //public abstract void debuffEffect(Rigidbody2D rigidbody);
-   
+    }   
 }
